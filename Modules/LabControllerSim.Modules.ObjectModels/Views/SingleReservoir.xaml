@@ -1,0 +1,249 @@
+﻿<UserControl x:Class="LabControllerSim.Modules.ObjectModels.Views.SingleReservoir"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:converters="clr-namespace:LabControllerSim.Modules.ObjectModels"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors" 
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             
+             >
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Canvas Width="{Binding ActualWidth, ElementName=Reservoir}" Height="{Binding ActualHeight, ElementName=Reservoir}" Grid.Column="0">
+            <Rectangle       
+             Fill="CadetBlue" Height="170" Width="230" Canvas.Left="122" Canvas.Top="345">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+
+                        <ScaleTransform ScaleY="{Binding SingleReservoir.ConvertedWaterLevel}" />
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle       
+             Fill="CadetBlue" Height="200" Width="3" Canvas.Left="177" Canvas.Top="141" Visibility="{Binding SingleReservoir.Z1WaterVisibility}"/>
+            <Rectangle       
+             Fill="CadetBlue" Height="200" Width="3" Canvas.Left="295" Canvas.Top="141" Visibility="{Binding SingleReservoir.Z2WaterVisibility}"/>
+            <Rectangle       
+             Fill="CadetBlue" Height="40" Width="3" Canvas.Left="442" Canvas.Top="435"  Visibility="{Binding SingleReservoir.Z3WaterVisibility}"/>
+            <Rectangle       
+            Fill="Red" Height="95" Width="8" Canvas.Left="82" Canvas.Top="430">
+                <Rectangle.RenderTransform>
+                    <TransformGroup >
+                        <ScaleTransform ScaleY="{Binding SingleReservoir.ConvertedTemperatureLevel}" />
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+
+            <Border   Width="20" Height="20" BorderBrush="Black" BorderThickness="1" Canvas.Left="425" Canvas.Top="296">
+                <TextBlock Text="x1" TextAlignment="Center" Background="{Binding SingleReservoir.X1Background}"/>
+            </Border>
+
+            <Border Width="20" Height="20" BorderBrush="Black" BorderThickness="1" Canvas.Left="425" Canvas.Top="238">
+                <TextBlock Text="x2" TextAlignment="Center" Background="{Binding SingleReservoir.X2Background}"/>
+            </Border>
+
+            <Border Width="20" Height="20" BorderBrush="Black" BorderThickness="1" Canvas.Left="425" Canvas.Top="180">
+                <TextBlock Text="x3" TextAlignment="Center" Background="{Binding SingleReservoir.X3Background}"/>
+            </Border>
+
+            <Border Width="20" Height="20" BorderBrush="Black" BorderThickness="1" Canvas.Left="99" Canvas.Top="50">
+                <TextBlock Text="Z1" TextAlignment="Center" Background="{Binding SingleReservoir.Z1Background}"/>
+            </Border>
+
+            <Border Width="20" Height="20" BorderBrush="Black" BorderThickness="1" Canvas.Left="365" Canvas.Top="50">
+                <TextBlock Text="Z2" TextAlignment="Center" Background="{Binding SingleReservoir.Z2Background}"/>
+            </Border>
+
+            <Border Width="20" Height="20" BorderBrush="Black" BorderThickness="1" Canvas.Left="362" Canvas.Top="420">
+                <TextBlock Text="Z3" TextAlignment="Center" Background="{Binding SingleReservoir.Z3Background}"/>
+            </Border>
+
+            <Border Width="20" Height="20" BorderBrush="Black" BorderThickness="1" Canvas.Left="204" Canvas.Top="400">
+                <TextBlock Text="G" TextAlignment="Center" Background="{Binding SingleReservoir.GBackground}"/>
+            </Border>
+
+            <Border Width="20" Height="20" BorderBrush="Black" BorderThickness="1" Canvas.Left="223" Canvas.Top="84">
+                <TextBlock Text="M" TextAlignment="Center" Background="{Binding SingleReservoir.MBackground}"/>
+            </Border>
+
+            <Border Width="20" Height="20" BorderBrush="Black" BorderThickness="1" Canvas.Left="33" Canvas.Top="293">
+                <TextBlock Text="T" TextAlignment="Center" Background="{Binding SingleReservoir.TBackground}"/>
+            </Border>
+
+            <Border Width="40" Height="20" BorderBrush="Black" BorderThickness="1" Canvas.Left="50" Canvas.Top="150">
+                <TextBlock Text="{Binding SingleReservoir.WaterLevel}" TextAlignment="Center"  />
+            </Border>
+
+            <Border Width="40" Height="20" BorderBrush="Black" BorderThickness="1" Canvas.Top="370" Canvas.Left="15">
+                <TextBlock Text="{Binding SingleReservoir.TemperatureLevel}" TextAlignment="Center" />
+            </Border>
+            <Button Cursor="Hand" Height="50" Width="30" Canvas.Top="355" Canvas.Left="260"  Grid.Column="0" Grid.Row="1" Content="W" Background="{Binding SingleReservoir.WBackground}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="PreviewMouseLeftButtonDown" >
+                        <prism:InvokeCommandAction Command="{Binding MouseLeftButtonDownCommand}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=Content}" />
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="PreviewMouseLeftButtonUp">
+                        <prism:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=Content}" />
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="PreviewMouseRightButtonDown">
+                        <prism:InvokeCommandAction Command="{Binding MouseRightButtonDownCommand}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=Content}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+        </Canvas>
+        <Image x:Name="Reservoir" Source="/LabControllerSim.Modules.ObjectModels;component/Images/SingleReservoir.png" />
+
+
+        <Grid Margin="5 5 5 5" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition />
+                <RowDefinition Height="6*"/>
+            </Grid.RowDefinitions>
+            <TextBlock  Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"><Run Text="Wejścia"/></TextBlock>
+            <ScrollViewer Grid.Row="1"  Margin="5 5 5 5" VerticalScrollBarVisibility="Auto">
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="x1" Grid.Row="0" Padding="0 10 0 0"/>
+                    <TextBlock Text="x2" Grid.Row="1" Padding="0 10 0 0"/>
+                    <TextBlock Text="x3" Grid.Row="2" Padding="0 10 0 0"/>
+                    <TextBlock Text="T" Grid.Row="3" Padding="0 10 0 0"/>
+
+                    <ComboBox SelectedIndex="{Binding SingleReservoir.X1Index}" Grid.Column="1" Grid.Row="0" HorizontalContentAlignment="Center" Height="20" IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}">
+                        <ComboBoxItem  IsSelected="True" Content="INPUT[0]"/>
+                        <ComboBoxItem Content="INPUT[1]" />
+                        <ComboBoxItem Content="INPUT[2]" />
+                        <ComboBoxItem Content="INPUT[3]" />
+                        <ComboBoxItem Content="INPUT[4]" />
+                        <ComboBoxItem Content="INPUT[5]" />
+                        <ComboBoxItem Content="INPUT[6]" />
+                        <ComboBoxItem Content="INPUT[7]" />
+                    </ComboBox>
+
+                    <ComboBox SelectedIndex="{Binding SingleReservoir.X2Index}" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Center" Height="20" IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}">
+                        <ComboBoxItem Content="INPUT[0]" />
+                        <ComboBoxItem  IsSelected="True" Content="INPUT[1]"/>
+                        <ComboBoxItem Content="INPUT[2]" />
+                        <ComboBoxItem Content="INPUT[3]" />
+                        <ComboBoxItem Content="INPUT[4]" />
+                        <ComboBoxItem Content="INPUT[5]" />
+                        <ComboBoxItem Content="INPUT[6]" />
+                        <ComboBoxItem Content="INPUT[7]" />
+                    </ComboBox>
+                    <ComboBox SelectedIndex="{Binding SingleReservoir.X3Index}" Grid.Column="1" Grid.Row="2" HorizontalContentAlignment="Center" Height="20" IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}">
+                        <ComboBoxItem Content="INPUT[0]" />
+                        <ComboBoxItem Content="INPUT[1]" />
+                        <ComboBoxItem IsSelected="True" Content="INPUT[2]" />
+                        <ComboBoxItem Content="INPUT[3]" />
+                        <ComboBoxItem Content="INPUT[4]" />
+                        <ComboBoxItem Content="INPUT[5]" />
+                        <ComboBoxItem Content="INPUT[6]" />
+                        <ComboBoxItem Content="INPUT[7]" />
+                    </ComboBox>
+                    <ComboBox SelectedIndex="{Binding SingleReservoir.TIndex}" Grid.Column="1" Grid.Row="3" HorizontalContentAlignment="Center" Height="20" IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}">
+                        <ComboBoxItem Content="INPUT[0]" />
+                        <ComboBoxItem Content="INPUT[1]" />
+                        <ComboBoxItem Content="INPUT[2]" />
+                        <ComboBoxItem IsSelected="True" Content="INPUT[3]" />
+                        <ComboBoxItem Content="INPUT[4]" />
+                        <ComboBoxItem Content="INPUT[5]" />
+                        <ComboBoxItem Content="INPUT[6]" />
+                        <ComboBoxItem Content="INPUT[7]" />
+                    </ComboBox>
+
+                </Grid>
+
+            </ScrollViewer>
+            <TextBlock  Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Text="Wyjścia"/>
+            <ScrollViewer Grid.Row="3"  Margin="5 5 5 5" VerticalScrollBarVisibility="Auto">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Z1" Grid.Row="0" Padding="0 8 0 0"/>
+                    <TextBlock Text="Z2" Grid.Row="1" Padding="0 8 0 0"/>
+                    <TextBlock Text="Z3" Grid.Row="2" Padding="0 8 0 0"/>
+                    <TextBlock Text="G" Grid.Row="3" Padding="0 8 0 0"/>
+                    <TextBlock Text="M" Grid.Row="4" Padding="0 8 0 0"/>
+
+                    <ComboBox SelectedIndex="{Binding SingleReservoir.Z1Index}" Grid.Column="1" Grid.Row="0" HorizontalContentAlignment="Center" Height="20" IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}">
+                        <ComboBoxItem IsSelected="True" Content="OUTPUT[0]"/>
+                        <ComboBoxItem Content="OUTPUT[1]"/>
+                        <ComboBoxItem Content="OUTPUT[2]"/>
+                        <ComboBoxItem Content="OUTPUT[3]"/>
+                        <ComboBoxItem Content="OUTPUT[4]"/>
+                        <ComboBoxItem Content="OUTPUT[5]"/>
+                        <ComboBoxItem Content="OUTPUT[6]"/>
+                        <ComboBoxItem Content="OUTPUT[7]"/>
+                    </ComboBox>
+
+                    <ComboBox SelectedIndex="{Binding SingleReservoir.Z2Index}" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Center" Height="20" IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}">
+                        <ComboBoxItem Content="OUTPUT[0]"/>
+                        <ComboBoxItem IsSelected="True" Content="OUTPUT[1]"/>
+                        <ComboBoxItem Content="OUTPUT[2]"/>
+                        <ComboBoxItem Content="OUTPUT[3]"/>
+                        <ComboBoxItem Content="OUTPUT[4]"/>
+                        <ComboBoxItem Content="OUTPUT[5]"/>
+                        <ComboBoxItem Content="OUTPUT[6]"/>
+                        <ComboBoxItem Content="OUTPUT[7]"/>
+                    </ComboBox>
+
+                    <ComboBox SelectedIndex="{Binding SingleReservoir.Z3Index}" Grid.Column="1" Grid.Row="2" HorizontalContentAlignment="Center" Height="20" IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}">
+                        <ComboBoxItem Content="OUTPUT[0]"/>
+                        <ComboBoxItem Content="OUTPUT[1]"/>
+                        <ComboBoxItem IsSelected="True" Content="OUTPUT[2]"/>
+                        <ComboBoxItem Content="OUTPUT[3]"/>
+                        <ComboBoxItem Content="OUTPUT[4]"/>
+                        <ComboBoxItem Content="OUTPUT[5]"/>
+                        <ComboBoxItem Content="OUTPUT[6]"/>
+                        <ComboBoxItem Content="OUTPUT[7]"/>
+                    </ComboBox>
+
+                    <ComboBox SelectedIndex="{Binding SingleReservoir.GIndex}" Grid.Column="1" Grid.Row="3" HorizontalContentAlignment="Center" Height="20" IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}">
+                        <ComboBoxItem Content="OUTPUT[0]"/>
+                        <ComboBoxItem Content="OUTPUT[1]"/>
+                        <ComboBoxItem Content="OUTPUT[2]"/>
+                        <ComboBoxItem IsSelected="True" Content="OUTPUT[3]"/>
+                        <ComboBoxItem Content="OUTPUT[4]"/>
+                        <ComboBoxItem Content="OUTPUT[5]"/>
+                        <ComboBoxItem Content="OUTPUT[6]"/>
+                        <ComboBoxItem Content="OUTPUT[7]"/>
+                    </ComboBox>
+
+                    <ComboBox SelectedIndex="{Binding SingleReservoir.MIndex}" Grid.Column="1" Grid.Row="4" HorizontalContentAlignment="Center" Height="20" IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}">
+                        <ComboBoxItem Content="OUTPUT[0]"/>
+                        <ComboBoxItem Content="OUTPUT[1]"/>
+                        <ComboBoxItem Content="OUTPUT[2]"/>
+                        <ComboBoxItem Content="OUTPUT[3]"/>
+                        <ComboBoxItem IsSelected="True" Content="OUTPUT[4]"/>
+                        <ComboBoxItem Content="OUTPUT[5]"/>
+                        <ComboBoxItem Content="OUTPUT[6]"/>
+                        <ComboBoxItem Content="OUTPUT[7]"/>
+                    </ComboBox>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</UserControl>

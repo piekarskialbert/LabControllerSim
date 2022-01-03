@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>LabControllerSim.Modules.ObjectModels</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Images\SingleReservoir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\LabControllerSim.Core\LabControllerSim.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\SingleReservoir.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+</Project>

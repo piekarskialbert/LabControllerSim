@@ -1,0 +1,12 @@
+﻿<Window x:Class="LabControllerSim.Modules.BoardSimulator.Views.ConsoleSimulatorWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="Black"
+             Width="600" Height="400"
+                Title="{Binding Title}">
+    <Grid>
+        <ContentControl prism:RegionManager.RegionName="ConsoleSimulatorUserControl"/>
+    </Grid>
+</Window>

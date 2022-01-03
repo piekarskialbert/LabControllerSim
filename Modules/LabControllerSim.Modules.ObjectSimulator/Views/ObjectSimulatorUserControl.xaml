@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="LabControllerSim.Modules.ObjectSimulator.Views.ObjectSimulatorUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Wybierz obiekt" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20"/>
+        <ComboBox Grid.Column="0" Grid.Row="1" SelectedIndex="{Binding SelectedObjectIndex}" Margin="30 10 30 10" Height="40" ItemsSource="{Binding ObjectsLabels}"  VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  ></ComboBox>
+        <Button Grid.Column="1" Grid.Row="1" Content="Otwórz" Height="40" Padding="15 0 15 0" Margin="10"  VerticalAlignment="Top" HorizontalAlignment="Center" Command="{Binding ChooseObjectCommand}"></Button>
+    </Grid>
+</UserControl>

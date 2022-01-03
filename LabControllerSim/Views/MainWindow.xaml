@@ -1,0 +1,104 @@
+﻿<Window x:Class="LabControllerSim.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:LabControllerSim"
+        xmlns:viewmodels="clr-namespace:LabControllerSim.ViewModels"
+        mc:Ignorable="d"
+        xmlns:prism="http://prismlibrary.com/" 
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}" Height="450" Width="850">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="KeyUp">
+            <prism:InvokeCommandAction Command="{Binding KeyUpCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <DockPanel Margin="1">
+        <Menu DockPanel.Dock="Top">
+            <Menu.Items>
+                <MenuItem Header="Plik" DataContext="{Binding File}">
+                    <MenuItem InputGestureText="Ctrl+N"  Header="Nowy" Command="{Binding NewCommand}"/>
+                    <MenuItem InputGestureText="Ctrl+O" Header="Otwórz" Command="{Binding OpenComand}"/>
+                    <MenuItem InputGestureText="Ctrl+S"  Header="Zapisz" Command="{Binding SaveCommand}"/>
+                    <MenuItem Header="Zapisz jako.." Command="{Binding SaveAsCommand}"/>
+                </MenuItem>
+                <MenuItem Header="Edycja" DataContext="">
+                    <MenuItem Command="Undo" Header="Cofnij" />
+                    <MenuItem Command="Redo" Header="Przywróc" />
+                    <Separator/>
+                    <MenuItem Command="Cut" Header="Wytnij" />
+                    <MenuItem Command="Copy" Header="Kopiuj" />
+                    <MenuItem Command="Paste" Header="Wklej"/>
+                </MenuItem>
+                <MenuItem Header="Widok" DataContext="">
+
+                </MenuItem>
+                <MenuItem Header="Program" DataContext="{Binding Program}">
+                    <MenuItem Header="Sprawdź błędy" Command="{Binding CheckErrorsCommand}"/>
+                    <MenuItem InputGestureText="F5" Header="Utwórz plik wykonywalny" Command="{Binding CompileCommand}"/>
+                </MenuItem>
+                <MenuItem Header="Symulator" DataContext="{Binding Simulator}">
+                    <MenuItem Header="Symulator sterownika" Command="{Binding OpenSimulatorCommand}"/>
+                </MenuItem>
+                <MenuItem Header="Pomoc" DataContext="{Binding Help}">
+                    <MenuItem Header="Pomoc" Command="{Binding HelpCommand}"/>
+                    <MenuItem Header="O programie" Command="{Binding AboutProgramCommand}"/>
+                </MenuItem>
+            </Menu.Items>
+        </Menu>
+
+        <TextBlock DockPanel.Dock="Top"
+                        Height="20"
+                        DataContext="{Binding File}"
+                        Text="{Binding Document.FilePath}"/>
+        <DockPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <GridSplitter Grid.Row="1"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Center"
+                              Background="Gray"
+                              ShowsPreview="True"
+                              Height="3"/>
+
+
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="2">
+                    <ContentControl prism:RegionManager.RegionName="ErrorListRegion" Grid.Row="2"/>
+                </ScrollViewer>
+                <local:AvalonTextEditor x:Name="xmlMessage" 
+                                        FontFamily="Consolas" 
+                                        SyntaxHighlighting="C++" 
+                                        HorizontalScrollBarVisibility="Auto"
+                                        ShowLineNumbers="True" 
+                                        Document="{Binding File.Document.EditorDocument}"
+                                        >
+                    <local:AvalonTextEditor.ContextMenu>
+                        <ContextMenu x:Name="mymenu1">
+                            <ContextMenu.Resources>
+                                <Style TargetType="MenuItem">
+                                    <Setter Property="CommandParameter" Value="{Binding Path=., RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}"/>
+                                </Style>
+                            </ContextMenu.Resources>
+                            <Separator />
+                            <MenuItem Command="Undo" Header="Cofnij" />
+                            <MenuItem Command="Redo" Header="Przywróc" />
+                            <Separator/>
+                            <MenuItem Command="Cut" Header="Wytnij" />
+                            <MenuItem Command="Copy" Header="Kopiuj" />
+                            <MenuItem Command="Paste" Header="Wklej"/>
+                        </ContextMenu>
+                    </local:AvalonTextEditor.ContextMenu>
+                </local:AvalonTextEditor>
+            </Grid>
+        </DockPanel>
+    </DockPanel>
+
+</Window>
+

@@ -1,0 +1,20 @@
+﻿<Window x:Class="LabControllerSim.Views.AboutProgramDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabControllerSim.Views"
+        mc:Ignorable="d"
+        Title="O programie" Height="350" Width="500">
+    <Grid>
+        <StackPanel VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+            <TextBlock FontSize="24" 
+                   HorizontalAlignment="Center"
+                   FontWeight="Bold">
+            Wersja programu: v1.0 <LineBreak></LineBreak>
+            Autor: Piekarski Albert
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>
