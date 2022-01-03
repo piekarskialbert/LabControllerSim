@@ -75,12 +75,10 @@ namespace LabControllerSim.Modules.ObjectModels.Models
         private Brush _wBackground;
         public Brush WBackground { get { return _wBackground; } set { OnPropertyChange(ref _wBackground, value); } }
 
-        private int _z1 = 0, _z2 = 0, _z3 = 0, _g = 0, _m = 0, _x1 = 0, _x2 = 0, _x3 = 0, _t = 0,_w=0;
+        private int _z1 = 0, _z2 = 0, _z3 = 0, _g = 0, _m = 0, _x1 = 0, _x2 = 0, _x3 = 0, _t = 0, _w = 0;
         Brush yellowBrush = new SolidColorBrush(Colors.Yellow);
         Brush greenBrush = new SolidColorBrush(Colors.LightGreen);
         Brush whiteBrush = new SolidColorBrush(Colors.White);
-        Brush grayBrush = new SolidColorBrush(Colors.Gray);
-        Brush lightGrayBrush = new SolidColorBrush(Colors.LightGray);
         public int Z1 { get { return _z1; } set { OnPropertyChange(ref _z1, value); Z1Background = _z1 == 1 ? greenBrush : whiteBrush; Z1WaterVisibility = _z1 == 1 ? Visibility.Visible : Visibility.Hidden; } }
         public int Z2 { get { return _z2; } set { OnPropertyChange(ref _z2, value); Z2Background = _z2 == 1 ? greenBrush : whiteBrush; Z2WaterVisibility = _z2 == 1 ? Visibility.Visible : Visibility.Hidden; } }
         public int Z3 { get { return _z3; } set { OnPropertyChange(ref _z3, value); Z3Background = _z3 == 1 ? greenBrush : whiteBrush; Z3WaterVisibility = _z3 == 1 ? Visibility.Visible : Visibility.Hidden; } }
@@ -90,7 +88,7 @@ namespace LabControllerSim.Modules.ObjectModels.Models
         public int T { get { return _t; } set { OnPropertyChange(ref _t, value); TBackground = _t == 1 ? yellowBrush : whiteBrush; } }
         public int G { get { return _g; } set { OnPropertyChange(ref _g, value); GBackground = _g == 1 ? greenBrush : whiteBrush; } }
         public int M { get { return _m; } set { OnPropertyChange(ref _m, value); MBackground = _m == 1 ? greenBrush : whiteBrush; } }
-        public int W { get { return _w; } set { OnPropertyChange(ref _w, value); WBackground = _w == 0 ? lightGrayBrush : grayBrush; } }
+        public int W { get { return _w; } set { OnPropertyChange(ref _w, value); WBackground = _w == 1 ? greenBrush : whiteBrush; } }
 
         private int _x1Index;
         public int X1Index { get { return _x1Index; } set { OnPropertyChange(ref _x1Index, value); } }

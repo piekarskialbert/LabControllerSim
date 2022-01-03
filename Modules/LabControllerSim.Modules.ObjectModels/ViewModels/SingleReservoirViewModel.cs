@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 namespace LabControllerSim.Modules.ObjectModels.ViewModels
 {
@@ -35,7 +36,7 @@ namespace LabControllerSim.Modules.ObjectModels.ViewModels
         }
         private void MouseRightButtonDown(object obj)
         {
-            if (obj.ToString() == "W") SingleReservoir.W = SingleReservoir.W == 0 ? 10 : 0;
+            if (obj.ToString() == "W") SingleReservoir.W = SingleReservoir.W == 0 ? 1 : 0;
 
         }
 
@@ -47,7 +48,7 @@ namespace LabControllerSim.Modules.ObjectModels.ViewModels
 
         private void MouseLeftButtonDown(object obj)
         {
-            if (obj.ToString() == "W") SingleReservoir.W = 10;
+            if (obj.ToString() == "W") SingleReservoir.W = 1;
 
         }
         private void ConnectToProgram(bool programIsConnected)
@@ -100,12 +101,12 @@ namespace LabControllerSim.Modules.ObjectModels.ViewModels
             if (OUTPUT[7] != Int32.Parse(output.Substring(7, 1))) OUTPUT[7] = Int32.Parse(output.Substring(7, 1));
 
             SetOutput();
-
             if (SingleReservoir.Z1 == 1 && SingleReservoir.WaterLevel <= 1000) SingleReservoir.WaterLevel += 2;
             if (SingleReservoir.Z2 == 1 && SingleReservoir.WaterLevel <= 1000) SingleReservoir.WaterLevel += 4;
             if (SingleReservoir.Z3 == 1 && SingleReservoir.WaterLevel >= 0) SingleReservoir.WaterLevel -= 5;
+            if (SingleReservoir.W == 1) SingleReservoir.WaterLevel -= 10;
             if (SingleReservoir.G == 1 && SingleReservoir.TemperatureLevel <= 100) SingleReservoir.TemperatureLevel += 0.5;
-            else if (SingleReservoir.TemperatureLevel >= 0) SingleReservoir.TemperatureLevel = SingleReservoir.TemperatureLevel - 0.05 - SingleReservoir.W;
+            else if (SingleReservoir.TemperatureLevel >= 0) SingleReservoir.TemperatureLevel = SingleReservoir.TemperatureLevel - 0.05;
             if (SingleReservoir.TemperatureLevel <= 0) SingleReservoir.TemperatureLevel = 0;
             if (SingleReservoir.TemperatureLevel >= 100) SingleReservoir.TemperatureLevel = 100;
             if (SingleReservoir.WaterLevel >= 1000) SingleReservoir.WaterLevel = 1000;
@@ -114,7 +115,6 @@ namespace LabControllerSim.Modules.ObjectModels.ViewModels
             SingleReservoir.X2 = SingleReservoir.WaterLevel >= 555 ? 1 : 0;
             SingleReservoir.X3 = SingleReservoir.WaterLevel >= 855 ? 1 : 0;
             SingleReservoir.T = SingleReservoir.TemperatureLevel >= 80 ? 1 : 0;
-
             SetInput();
 
             inputToProgram = String.Join("", INPUT.Select(x => x.ToString()));

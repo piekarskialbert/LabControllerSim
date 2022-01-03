@@ -13,6 +13,20 @@
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+
+            <Button Cursor="Hand" Height="50" Width="20" Margin="30 270 0 0" Canvas.ZIndex="1" Content="W" Background="{Binding SingleReservoir.WBackground}" >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="PreviewMouseLeftButtonDown" >
+                        <prism:InvokeCommandAction Command="{Binding MouseLeftButtonDownCommand}" CommandParameter="{Binding Content, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" />
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="PreviewMouseLeftButtonUp">
+                        <prism:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}" CommandParameter="{Binding Content, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" />
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="PreviewMouseRightButtonDown">
+                        <prism:InvokeCommandAction Command="{Binding MouseRightButtonDownCommand}" CommandParameter="{Binding Content, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
         <Canvas Width="{Binding ActualWidth, ElementName=Reservoir}" Height="{Binding ActualHeight, ElementName=Reservoir}" Grid.Column="0">
             <Rectangle       
              Fill="CadetBlue" Height="170" Width="230" Canvas.Left="122" Canvas.Top="345">
@@ -81,21 +95,10 @@
             <Border Width="40" Height="20" BorderBrush="Black" BorderThickness="1" Canvas.Top="370" Canvas.Left="15">
                 <TextBlock Text="{Binding SingleReservoir.TemperatureLevel}" TextAlignment="Center" />
             </Border>
-            <Button Cursor="Hand" Height="50" Width="30" Canvas.Top="355" Canvas.Left="260"  Grid.Column="0" Grid.Row="1" Content="W" Background="{Binding SingleReservoir.WBackground}">
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="PreviewMouseLeftButtonDown" >
-                        <prism:InvokeCommandAction Command="{Binding MouseLeftButtonDownCommand}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=Content}" />
-                    </i:EventTrigger>
-                    <i:EventTrigger EventName="PreviewMouseLeftButtonUp">
-                        <prism:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=Content}" />
-                    </i:EventTrigger>
-                    <i:EventTrigger EventName="PreviewMouseRightButtonDown">
-                        <prism:InvokeCommandAction Command="{Binding MouseRightButtonDownCommand}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=Content}" />
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-            </Button>
         </Canvas>
+
         <Image x:Name="Reservoir" Source="/LabControllerSim.Modules.ObjectModels;component/Images/SingleReservoir.png" />
+        
 
 
         <Grid Margin="5 5 5 5" Grid.Column="1">
