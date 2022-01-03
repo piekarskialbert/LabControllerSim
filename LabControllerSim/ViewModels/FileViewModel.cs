@@ -31,6 +31,7 @@ namespace LabControllerSim.ViewModels
   
             Document = document;
             Document.EditorDocument = new TextDocument();
+            Document.EditorDocument.Text = NewFilePattern();
             NewCommand = new RelayCommand(NewFile);
             SaveCommand = new RelayCommand(SaveFile, () => !Document.isEmpty);
             SaveAsCommand = new RelayCommand(SaveFileAs);

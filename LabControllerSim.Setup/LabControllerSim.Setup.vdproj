@@ -1299,6 +1299,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_15169C6DEA2C490C8E0379552FB6FB42"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_15588E5E8C834FDA8831E5E8752075F4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1995,12 +2001,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_20578257D07E4AB6B04A9DE08835FCC2"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_205D4CBFB0054B0193EE1C22A1B14557"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2080,6 +2080,12 @@
         "Entry"
         {
         "MsmKey" = "8:_21C285EE960643C5B31A118ACF1F91C0"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_21D71F887AF54AE2BD06EE1D88220FB4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2877,12 +2883,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2CCB95418B12403AA595AF7EB207335C"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_2CD3D16A571C459585925CF62A0E0FFF"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -3189,6 +3189,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_31D2D7F1ABE141D0A04CB3EA875C3576"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_31D7C644E7E94E5AAC99C4C1F92C71B5"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -3286,6 +3292,12 @@
         "Entry"
         {
         "MsmKey" = "8:_33200D3443C5444B855D388E50E7F1FE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_333A89C95FFC46B7985DF1651A50C1F0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -3669,6 +3681,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_39E6CAD54B814777A572006C72734295"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_39F1D27194B34CEFA2AF42D84A88E239"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -3700,6 +3718,12 @@
         "Entry"
         {
         "MsmKey" = "8:_3B4080FCD12F46B58F06FD133ECA5810"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3B4F11ACAF154EDA9745D3233AD251DA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -4540,12 +4564,6 @@
         "Entry"
         {
         "MsmKey" = "8:_48A49EAEF1AA48C8A5B31B607EAD981D"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_48C6EA699D524169A247BD2F8B12F8F8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -6843,12 +6861,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_6AEAD2EBE37A41E68DD718AA0A703B9A"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_6B09886BD6924D70A78B6953D1FCB335"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -8901,6 +8913,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_8A09588C4126444781E3ECB1B94E0DB1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8A0E9F05745848929A3481E74B5E58C9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -10413,6 +10431,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A09969078A5E4BA2B92EE48A67EBB564"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A09D4E5ACB51416B9232E0A1609326C1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -10707,6 +10731,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A4C4690CB4E946878F879B70A2BAE00D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A4D6D5C5974D48978D143EFFFF6ED228"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -10924,6 +10954,12 @@
         "Entry"
         {
         "MsmKey" = "8:_A77B79D867D745F19DF5000EF403F867"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A79B58535FC44AF18B1E930F94CDF95F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -11295,6 +11331,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_AE1156D7E6AA40BDB217A239E3419086"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_AE1686A42ED4439EA4E40BAB8489BEA2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -11494,6 +11536,12 @@
         "Entry"
         {
         "MsmKey" = "8:_B0BBD185A173437BACFF61582DCEE024"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B0DB0CCF717047569D88EA4FD8804BE1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -13011,12 +13059,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C8770BFCAC65401D92CFDEBF308AF6CD"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_C889E07713C34DB8B3341EA370D6C87E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -14122,12 +14164,6 @@
         "Entry"
         {
         "MsmKey" = "8:_D89E89B6A0094311835D942CC64A1881"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D89E9718B7514A418EB5A592BDED66DC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -16670,6 +16706,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -21004,6 +21048,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_15169C6DEA2C490C8E0379552FB6FB42"
+            {
+            "SourcePath" = "8:..\\Samples\\zbiornik_symulator_z_zakloceniem.c"
+            "TargetName" = "8:zbiornik_symulator_z_zakloceniem.c"
+            "Tag" = "8:"
+            "Folder" = "8:_440BAD47F7C9422EAB92CDB14A09F318"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_15588E5E8C834FDA8831E5E8752075F4"
             {
             "SourcePath" = "8:..\\Compiler\\lib\\libd3dx8d.a"
@@ -23324,26 +23388,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_20578257D07E4AB6B04A9DE08835FCC2"
-            {
-            "SourcePath" = "8:..\\Samples\\zbiornik_komunikacja1.c"
-            "TargetName" = "8:zbiornik_komunikacja1.c"
-            "Tag" = "8:"
-            "Folder" = "8:_440BAD47F7C9422EAB92CDB14A09F318"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_205D4CBFB0054B0193EE1C22A1B14557"
             {
             "SourcePath" = "8:..\\Compiler\\gdb32\\bin\\Lib\\dbm\\gnu.py"
@@ -23610,6 +23654,26 @@
             "TargetName" = "8:getpass.py"
             "Tag" = "8:"
             "Folder" = "8:_B1F79899614C4E3C8F25E6A8CED112FA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_21D71F887AF54AE2BD06EE1D88220FB4"
+            {
+            "SourcePath" = "8:..\\Samples\\zbiornik_z_zakloceniem.exe"
+            "TargetName" = "8:zbiornik_z_zakloceniem.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_440BAD47F7C9422EAB92CDB14A09F318"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -26264,26 +26328,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2CCB95418B12403AA595AF7EB207335C"
-            {
-            "SourcePath" = "8:..\\Samples\\przykladowyprogram1.exe"
-            "TargetName" = "8:przykladowyprogram1.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_440BAD47F7C9422EAB92CDB14A09F318"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2CD3D16A571C459585925CF62A0E0FFF"
             {
             "SourcePath" = "8:..\\Compiler\\gdb32\\bin\\Lib\\encodings\\cp856.py"
@@ -27304,6 +27348,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_31D2D7F1ABE141D0A04CB3EA875C3576"
+            {
+            "SourcePath" = "8:..\\Samples\\zbiornik_komunikacja.c"
+            "TargetName" = "8:zbiornik_komunikacja.c"
+            "Tag" = "8:"
+            "Folder" = "8:_440BAD47F7C9422EAB92CDB14A09F318"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_31D7C644E7E94E5AAC99C4C1F92C71B5"
             {
             "SourcePath" = "8:..\\Compiler\\include\\ddk\\usbscan.h"
@@ -27630,6 +27694,26 @@
             "TargetName" = "8:_endian.py"
             "Tag" = "8:"
             "Folder" = "8:_420F86E8C8BF43CCBCE20D25BD6383A5"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_333A89C95FFC46B7985DF1651A50C1F0"
+            {
+            "SourcePath" = "8:..\\Samples\\dioda.c"
+            "TargetName" = "8:dioda.c"
+            "Tag" = "8:"
+            "Folder" = "8:_440BAD47F7C9422EAB92CDB14A09F318"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -28904,6 +28988,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_39E6CAD54B814777A572006C72734295"
+            {
+            "SourcePath" = "8:..\\Samples\\zbiornik_symulator.c"
+            "TargetName" = "8:zbiornik_symulator.c"
+            "Tag" = "8:"
+            "Folder" = "8:_440BAD47F7C9422EAB92CDB14A09F318"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_39F1D27194B34CEFA2AF42D84A88E239"
             {
             "SourcePath" = "8:..\\Compiler\\bin\\mingw32-gcc.exe"
@@ -29010,6 +29114,26 @@
             "TargetName" = "8:fix_operator.py"
             "Tag" = "8:"
             "Folder" = "8:_D96DD9D36D744D8281CA0A4C80F87F4F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3B4F11ACAF154EDA9745D3233AD251DA"
+            {
+            "SourcePath" = "8:..\\Samples\\zbiornik_z_zakloceniem.c"
+            "TargetName" = "8:zbiornik_z_zakloceniem.c"
+            "Tag" = "8:"
+            "Folder" = "8:_440BAD47F7C9422EAB92CDB14A09F318"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -31810,26 +31934,6 @@
             "TargetName" = "8:__init__.py"
             "Tag" = "8:"
             "Folder" = "8:_C4BE0F0D388B415F9C10A4F7DDDC4AE0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_48C6EA699D524169A247BD2F8B12F8F8"
-            {
-            "SourcePath" = "8:..\\Samples\\zbiornik_komunikacja1.exe"
-            "TargetName" = "8:zbiornik_komunikacja1.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_440BAD47F7C9422EAB92CDB14A09F318"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -39484,26 +39588,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6AEAD2EBE37A41E68DD718AA0A703B9A"
-            {
-            "SourcePath" = "8:..\\Samples\\przykladowyprogram1.c"
-            "TargetName" = "8:przykladowyprogram1.c"
-            "Tag" = "8:"
-            "Folder" = "8:_440BAD47F7C9422EAB92CDB14A09F318"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6B09886BD6924D70A78B6953D1FCB335"
             {
             "SourcePath" = "8:..\\Compiler\\gdb32\\bin\\Lib\\ctypes\\test\\test_bytes.py"
@@ -46344,6 +46428,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8A09588C4126444781E3ECB1B94E0DB1"
+            {
+            "SourcePath" = "8:..\\Samples\\zbiornik.exe"
+            "TargetName" = "8:zbiornik.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_440BAD47F7C9422EAB92CDB14A09F318"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8A0E9F05745848929A3481E74B5E58C9"
             {
             "SourcePath" = "8:..\\Compiler\\lib\\gcc\\mingw32\\10.3.0\\include\\c++\\parallel\\types.h"
@@ -51384,6 +51488,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A09969078A5E4BA2B92EE48A67EBB564"
+            {
+            "SourcePath" = "8:..\\Samples\\zbiornik.c"
+            "TargetName" = "8:zbiornik.c"
+            "Tag" = "8:"
+            "Folder" = "8:_440BAD47F7C9422EAB92CDB14A09F318"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A09D4E5ACB51416B9232E0A1609326C1"
             {
             "SourcePath" = "8:..\\Compiler\\gdb32\\bin\\Lib\\encodings\\mac_greek.py"
@@ -52364,6 +52488,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A4C4690CB4E946878F879B70A2BAE00D"
+            {
+            "SourcePath" = "8:..\\Samples\\zbiornik_symulator.exe"
+            "TargetName" = "8:zbiornik_symulator.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_440BAD47F7C9422EAB92CDB14A09F318"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A4D6D5C5974D48978D143EFFFF6ED228"
             {
             "SourcePath" = "8:..\\Compiler\\lib\\gcc\\mingw32\\10.3.0\\include\\c++\\ext\\pb_ds\\detail\\cc_hash_table_map_\\insert_fn_imps.hpp"
@@ -53090,6 +53234,26 @@
             "TargetName" = "8:vfw.h"
             "Tag" = "8:"
             "Folder" = "8:_2102284CA39C41EDA2E12C955CD214FB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A79B58535FC44AF18B1E930F94CDF95F"
+            {
+            "SourcePath" = "8:..\\Samples\\zbiornik_komunikacja.exe"
+            "TargetName" = "8:zbiornik_komunikacja.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_440BAD47F7C9422EAB92CDB14A09F318"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -54324,6 +54488,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AE1156D7E6AA40BDB217A239E3419086"
+            {
+            "SourcePath" = "8:..\\Samples\\zbiornik_symulator_z_zakloceniem.exe"
+            "TargetName" = "8:zbiornik_symulator_z_zakloceniem.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_440BAD47F7C9422EAB92CDB14A09F318"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AE1686A42ED4439EA4E40BAB8489BEA2"
             {
             "SourcePath" = "8:..\\Compiler\\gdb32\\bin\\Lib\\concurrent\\futures\\__init__.py"
@@ -54990,6 +55174,26 @@
             "TargetName" = "8:conv.py"
             "Tag" = "8:"
             "Folder" = "8:_D7DD775B35BF40D085AA2873378800E6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B0DB0CCF717047569D88EA4FD8804BE1"
+            {
+            "SourcePath" = "8:..\\Samples\\dioda.exe"
+            "TargetName" = "8:dioda.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_440BAD47F7C9422EAB92CDB14A09F318"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -60044,26 +60248,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C8770BFCAC65401D92CFDEBF308AF6CD"
-            {
-            "SourcePath" = "8:..\\Samples\\zbiornik1_do_symulatora.c"
-            "TargetName" = "8:zbiornik1_do_symulatora.c"
-            "Tag" = "8:"
-            "Folder" = "8:_440BAD47F7C9422EAB92CDB14A09F318"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C889E07713C34DB8B3341EA370D6C87E"
             {
             "SourcePath" = "8:..\\Compiler\\share\\locale\\sr\\LC_MESSAGES\\ld.mo"
@@ -63750,26 +63934,6 @@
             "TargetName" = "8:as.exe"
             "Tag" = "8:"
             "Folder" = "8:_FF22317011EA47E58F8489AE85AC3171"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D89E9718B7514A418EB5A592BDED66DC"
-            {
-            "SourcePath" = "8:..\\Samples\\zbiornik1_do_symulatora.exe"
-            "TargetName" = "8:zbiornik1_do_symulatora.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_440BAD47F7C9422EAB92CDB14A09F318"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
