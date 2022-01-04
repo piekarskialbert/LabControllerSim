@@ -57,7 +57,7 @@ namespace LabControllerSim.Modules.Compilation.ViewModels
             string fileNamehWithoutExtension = FileName.Replace(".c", "");
             string Text = AddCoummunication(File.ReadAllText(FilePath));
             File.WriteAllText(tempFilePath, Text);
-            compilerProcess.StartInfo.Arguments = $"{tempFilePath} -o {filePathWithoutExtension}";
+            compilerProcess.StartInfo.Arguments = $"\"{tempFilePath}\" -o \"{filePathWithoutExtension}\"";
             compilerProcess.StartInfo.CreateNoWindow = true;
             compilerProcess.StartInfo.RedirectStandardError = true;
             compilerProcess.StartInfo.UseShellExecute = false;
@@ -134,7 +134,7 @@ namespace LabControllerSim.Modules.Compilation.ViewModels
             File.WriteAllText(tempFilePath, Text);
             Process compilerProcess = new Process();
             compilerProcess.StartInfo.FileName = @"Compiler\bin\gcc.exe";
-            compilerProcess.StartInfo.Arguments = $"{tempFilePath} -fsyntax-only";
+            compilerProcess.StartInfo.Arguments = $"\"{tempFilePath}\" -fsyntax-only";
             compilerProcess.StartInfo.CreateNoWindow = true;
             compilerProcess.StartInfo.RedirectStandardError = true;
             compilerProcess.StartInfo.UseShellExecute = false;
