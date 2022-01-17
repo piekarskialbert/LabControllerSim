@@ -26,6 +26,8 @@ namespace LabControllerSim.Modules.BoardSimulator.ViewModels
             OpenObjectSimulatorCommand = new RelayCommand(ObjectSimulatorOpen);
             OpenConsoleSimulatorCommand = new RelayCommand(ConsoleSimulatorOpen);
         }
+        
+        // Otwarcie okna symulatora konsoli w nowym wątku
         private void ConsoleSimulatorOpen()
         {
             Thread newConsoleSimulatorThread = new Thread(new ThreadStart(() =>
@@ -35,7 +37,6 @@ namespace LabControllerSim.Modules.BoardSimulator.ViewModels
                         Dispatcher.CurrentDispatcher));
                 consoleDispatcher = Dispatcher.CurrentDispatcher;
                 var consoleSimulatorWindow = new ConsoleSimulatorWindow();
-                // When the window closes, shut down the dispatcher
                 consoleSimulatorWindow.Closed += (s, e) => {
                     consoleDispatcher.BeginInvokeShutdown(DispatcherPriority.Background);
                 };
@@ -47,6 +48,7 @@ namespace LabControllerSim.Modules.BoardSimulator.ViewModels
             newConsoleSimulatorThread.Start();
         }
 
+        // Otwarcie okna symulatora obiektu w nowym wątku
         private void ObjectSimulatorOpen()
         {
             Thread newObjectSimulatorThread = new Thread(new ThreadStart(() =>
@@ -56,7 +58,6 @@ namespace LabControllerSim.Modules.BoardSimulator.ViewModels
                         Dispatcher.CurrentDispatcher));
                 objectDispatcher = Dispatcher.CurrentDispatcher;
                 var objectSimulatorWindow = new ObjectSimulatorWindow();
-                // When the window closes, shut down the dispatcher
                 objectSimulatorWindow.Closed += (s, e) => {
                     objectDispatcher.BeginInvokeShutdown(DispatcherPriority.Background);
                 };
@@ -67,6 +68,8 @@ namespace LabControllerSim.Modules.BoardSimulator.ViewModels
             newObjectSimulatorThread.IsBackground = true;
             newObjectSimulatorThread.Start();
         }
+
+        // Zamknięcie okien symulatora konsoli i obiektów
         public void CloseSimulatorWindows()
         {
             consoleDispatcher?.BeginInvokeShutdown(DispatcherPriority.Background);

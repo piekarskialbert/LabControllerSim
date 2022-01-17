@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace LabControllerSim.Core.Parameters
 {
+    // Klasa zawierająca parametry do przesyłania zdarzenia do modułu kompilacji
     public class CodeCompileEventParameters
     {
         public string FileName { get; set; }

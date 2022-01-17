@@ -6,6 +6,7 @@
              Width="600" Height="400"
              Title="{Binding Title}"
              >
+    <!-- Wywołanie odpowiednich komend przy zamknięciu okna, naciśnięciu i puszczeniu klawisza klawiatury-->
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Closing" >
             <i:InvokeCommandAction Command="{Binding CloseWindowCommand}" />
@@ -19,7 +20,7 @@
     </i:Interaction.Triggers>
     
     <Grid>
-        
+        <!--Region zawierający zawartość głównego okna symulatora - moduł BoardSimulator-->
         <ContentControl prism:RegionManager.RegionName="BoardSimulatorUserControl"/>
     </Grid>
 </Window>

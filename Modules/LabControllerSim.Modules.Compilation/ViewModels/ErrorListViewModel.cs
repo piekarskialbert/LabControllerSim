@@ -29,10 +29,11 @@ namespace LabControllerSim.Modules.Compilation.ViewModels
 
         public ErrorListViewModel(IEventAggregator ea)
         {
-            ea.GetEvent<CodeCompileEvent>().Subscribe(compile);
-            ea.GetEvent<CodeCheckErrorsEvent>().Subscribe(checkErrors);
+            ea.GetEvent<CodeCompileEvent>().Subscribe(compile); // Wywołąnie funkcji kompilującej program w przypadku odebrania zdarzenia CodeCompileEvent
+            ea.GetEvent<CodeCheckErrorsEvent>().Subscribe(checkErrors); // Wywołąnie funkcji sprawdzającej błędy w programie w przypadku odebrania zdarzenia CodeCheckErrorsEvent
         }
 
+        // Sprawdzenie błędów w programie i wyświetlenie wyniku w oknie
         private void checkErrors(CodeCompileEventParameters codeCompileEventParameters)
         {
             string errors = checkErrorsProcess(codeCompileEventParameters);
@@ -42,6 +43,7 @@ namespace LabControllerSim.Modules.Compilation.ViewModels
             CompilationOutput = $"Nazwa Pliku: {FileName} \nŚcieżka pliku: {FilePath} \nErrors: \n{errors}";
         }
 
+        // Utworzenie pliku wykonywalnego i wyświetlenie odpowiedniej informacji w oknie
         private void compile(CodeCompileEventParameters codeCompileEventParameters)
         {
             string FileName = codeCompileEventParameters.FileName;
@@ -49,8 +51,6 @@ namespace LabControllerSim.Modules.Compilation.ViewModels
             
             Process compilerProcess = new Process();
             compilerProcess.StartInfo.FileName = @"Compiler\bin\gcc.exe";
-            //  string path = System.IO.Path.GetFullPath(Assembly.GetEntryAssembly().Location);
-            // MessageBox.Show(path);
             string tempFileName = $"{GetUniqueKey()}.c";
             string tempFilePath = FilePath.Replace(FileName, tempFileName);
             string filePathWithoutExtension = FilePath.Replace(".c", "");
@@ -75,6 +75,7 @@ namespace LabControllerSim.Modules.Compilation.ViewModels
             }
         }
 
+        // Dodanie do kodu użytkownika funkcji umożliwiającej komunikacje z wirtualnym sterownikiem
         private string AddCoummunication(string text)
         {
             string newText = text;
@@ -122,6 +123,7 @@ namespace LabControllerSim.Modules.Compilation.ViewModels
             return newText;
         }
 
+        // Funkcja zwracająca błędy w programie użytkownika
         private string checkErrorsProcess(CodeCompileEventParameters codeCompileEventParameters)
         {
             string FileName = codeCompileEventParameters.FileName;
@@ -144,6 +146,8 @@ namespace LabControllerSim.Modules.Compilation.ViewModels
             string errors = compilerProcess.StandardError.ReadToEnd();
             return errors;
         }
+
+        // Dodanie do kodu użytkonwika deklaracji zmiennych potrzebych do poprawnego działania komunikacji
         private string AddDeclaration(string text)
         {
             string newText = text;
@@ -165,7 +169,6 @@ namespace LabControllerSim.Modules.Compilation.ViewModels
                         else break;
                     }
                 }
-               // if(startIndex)
                 startIndex = newText.IndexOf("int",startIndex+1);
 
 
@@ -173,11 +176,15 @@ namespace LabControllerSim.Modules.Compilation.ViewModels
             newText = newText.Insert(declaractionPlaceIndex, $"{DeclarationString()}{FunctionString()}");
             return newText;
         } 
+
+        //Kod zawierający deklaracje zmiennych
         private string DeclarationString()
         {
             return "char _input[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},  _output[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},"
-                +  "_inputChar[2], _outputChar[2], INPUT[8]={0,0,0,0,0,0,0,0}, OUTPUT[8]={0,0,0,0,0,0,0,0}, L1=0 , L2=0, L3=0, L4=0, L5=0, L6=0, L7=0, L8=0, aK1, aK2, aK3, aK4, aK5, aK6, aK7, aK8; ";
+                + "_inputChar[2], _outputChar[2], INPUT[8]={0,0,0,0,0,0,0,0}, OUTPUT[8]={0,0,0,0,0,0,0,0}, L1=0 , L2=0, L3=0, L4=0, L5=0, L6=0, L7=0, L8=0, aK1, aK2, aK3, aK4, aK5, aK6, aK7, aK8; ";
         }
+
+        // Kod zawierający możliwość wprowadzenia zmiennych wejściowych z symulatora
         private string InputString()
         {
             return "scanf(\"%s\",_input); scanf(\"%s\",_inputChar); \naK1 = _input[0]-'0'; aK2 = _input[1]-'0'; aK3 = _input[2]-'0'; aK4 = _input[3]-'0'; aK5 = _input[4]-'0'; aK6 = _input[5]-'0'; aK7 = _input[6]-'0';"
@@ -185,6 +192,7 @@ namespace LabControllerSim.Modules.Compilation.ViewModels
                 + " INPUT[6] = _input[14]-'0'; INPUT[7] = _input[15]-'0';";
         }
 
+        //Kod wyświetlający zmienne wyjściowe w pliku wykonywalnym, aby symulator mógł je przechwycić
         private string OutputString()
         {
             return "_output[0] = L1 + '0'; _output[1] = L2 + '0'; _output[2] = L3 + '0'; _output[3] = L4 + '0'; _output[4] = L5 + '0'; _output[5] = L6 + '0';"
@@ -192,9 +200,11 @@ namespace LabControllerSim.Modules.Compilation.ViewModels
                 + " _output[12] = OUTPUT[4] + '0'; _output[13] = OUTPUT[5] + '0'; _output[14] = OUTPUT[6] + '0'; _output[15] = OUTPUT[7] + '0';"
                 + "write(1, _output, 16); write(1, \"\\n\", 1); ";
         }
+
+        // Dodanie do kodu funkcji umożliwiającej wysyłanie i odbieranie komunikatów z i do wirtualnego sterownika
         private string FunctionString()
         {
-            return "char COM_recv(void) { return _inputChar[0]; } void COM_send(char charToSend) { _outputChar[0] = charToSend; write(1, \"COM\", 3); write(1, _outputChar, 1); write(1, \"\\n\", 1); } ";
+            return "char COM_recv(void) { return _inputChar[0]; } void COM_send(char charToSend) { if(charToSend == '\\n') {_outputChar[0]='N'; _outputChar[1] ='L';} else _outputChar[0] = charToSend; write(1, \"COM\", 3); write(1, _outputChar, 2); write(1, \"\\n\", 1); } ";
         }
         private string GetUniqueKey()
         {

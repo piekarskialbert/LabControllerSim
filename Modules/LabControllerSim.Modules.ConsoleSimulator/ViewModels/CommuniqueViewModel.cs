@@ -12,30 +12,18 @@ namespace LabControllerSim.Modules.ConsoleSimulator.ViewModels
     public class CommuniqueViewModel : ObservableObject
     {
         private string _text;
-        private string buffor;
-        long lastMillis;
         public string Text { get { return _text; } set { OnPropertyChange(ref _text, value); } }
 
         public CommuniqueViewModel(IEventAggregator ea)
         {
-            ea.GetEvent<SendCharFromProgramToConsoleEvent>().Subscribe(GetChar);
-            lastMillis = Millis();
-
+            ea.GetEvent<SendCharFromProgramToConsoleEvent>().Subscribe(GetChar); //Zdarzenie odbierające znak z programu
         }
 
+        //Dodanie znaku do zawartości konsoli
         private void GetChar(string charOutput)
         {
-            if (Millis() - lastMillis >= 500)
-            {
-                Text += "\n";
-            }
             Text += charOutput;
-            lastMillis = Millis();
         }
 
-        long Millis()
-        {
-            return (DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond);
-        }
     }
 }

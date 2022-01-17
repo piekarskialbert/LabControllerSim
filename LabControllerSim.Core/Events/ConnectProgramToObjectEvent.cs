@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace LabControllerSim.Core.Events
 {
+    // Zdarzenie przesyłające informacje czy program ma wymieniać informacje z symulatorem obiektów
     public class ConnectProgramToObjectEvent : PubSubEvent<bool>
     {
     }

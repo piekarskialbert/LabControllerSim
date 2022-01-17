@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace LabControllerSim.Core.Events
 {
+    // Zdarzenie przesyłające zmienne wyjściowe z programu do symulaotra obiektu
     public class SendOutputToObjectSimulatorEvent : PubSubEvent<string>
     {
     }

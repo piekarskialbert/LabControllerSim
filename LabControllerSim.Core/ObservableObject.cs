@@ -9,6 +9,7 @@ using System.Runtime.CompilerServices;
 namespace LabControllerSim.Core
 
 {
+    // Klasa implementująca InotifyPropertyChanged. Interfejs ten jest wykorzystywany w celu synchronizacji bindingów z powiązanymi danymi
     public class ObservableObject : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;

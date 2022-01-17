@@ -19,7 +19,7 @@ namespace LabControllerSim.Modules.ConsoleSimulator.ViewModels
         {
             Communique = new CommuniqueViewModel(ea);
             InputChar = new InputCharViewModel(ea);
-            ClearConsoleCommand = new RelayCommand(() => Communique.Text = "");
+            ClearConsoleCommand = new RelayCommand(() => Communique.Text = ""); // Czyszczenie zawartości konsoli
         }
     }
 }

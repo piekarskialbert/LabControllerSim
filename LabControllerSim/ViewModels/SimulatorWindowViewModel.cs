@@ -25,9 +25,9 @@ namespace LabControllerSim.ViewModels
         }
         public SimulatorWindowViewModel(IEventAggregator ea)
         {
-            CloseWindowCommand = new RelayCommand(() => ea.GetEvent<CloseSimulatorWindowEvent>().Publish(null));
-            KeyUpCommand = new DelegateCommand<KeyEventArgs>((e) => ea.GetEvent<KeyUpWindowEvent>().Publish(e));
-            KeyDownCommand = new DelegateCommand<KeyEventArgs>((e) => ea.GetEvent<KeyDownWindowEvent>().Publish(e));
+            CloseWindowCommand = new RelayCommand(() => ea.GetEvent<CloseSimulatorWindowEvent>().Publish(null)); // Wysłanie informacji o zamknięciu okna symulatora
+            KeyUpCommand = new DelegateCommand<KeyEventArgs>((e) => ea.GetEvent<KeyUpWindowEvent>().Publish(e)); // Przesłanie informacji o puszczeniu przycisku na klawiaturze
+            KeyDownCommand = new DelegateCommand<KeyEventArgs>((e) => ea.GetEvent<KeyDownWindowEvent>().Publish(e)); // Przesłanie informacji o naciśnięciu przycisku na klawiaturze
         }  
     }
 }

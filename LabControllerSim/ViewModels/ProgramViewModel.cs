@@ -29,41 +29,45 @@ namespace LabControllerSim.ViewModels
             CheckErrorsCommand = new DelegateCommand(CheckErrors);
         }
 
+        // Metoda sprawdzająca błędu programu użytownika przy pomocy modułu 'Compilation'
         public void CheckErrors()
         {
 
             if (!string.IsNullOrEmpty(File.Document.FileName))
             {
                 File.SaveFile();
+                // Przesłanie informacji o nazwie i ścieżce pliku utworzonego przez uzytkownika, którego kod kompilator ma sprawdzić
                 _ea.GetEvent<CodeCheckErrorsEvent>().Publish(new CodeCompileEventParameters() { FileName = File.Document.FileName, FilePath = File.Document.FilePath });
             }
             else
             {
+                // Okno z informacją o nie zapisanym pliku
                 string messageBoxText = "Przed sprawdzeniem błędów zapisz plik.";
                 string caption = "";
                 MessageBoxButton button = MessageBoxButton.OK;
                 MessageBoxImage icon = MessageBoxImage.Warning;
                 MessageBoxResult result;
-
                 result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
             }
         }
 
+        // Metoda tworząca plik wykonywalny kodu użytkownika przy pomocy modułu 'Compilation'
         public void Compile()
         {
             if (!string.IsNullOrEmpty(File.Document.FileName)) 
             {
                 File.SaveFile();
+                // Przesłanie informacji o nazwie i ścieżce pliku utworzonego przez uzytkownika, z którego kompilator ma utworzyć plik wykonywalny
                 _ea.GetEvent<CodeCompileEvent>().Publish(new CodeCompileEventParameters() { FileName = File.Document.FileName, FilePath = File.Document.FilePath });
             }
             else
             {
+                // Okno z informacją o nie zapisanym pliku
                 string messageBoxText = "Przed skompilowaniem zapisz plik.";
                 string caption = "";
                 MessageBoxButton button = MessageBoxButton.OK;
                 MessageBoxImage icon = MessageBoxImage.Warning;
                 MessageBoxResult result;
-
                 result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
             }
         }

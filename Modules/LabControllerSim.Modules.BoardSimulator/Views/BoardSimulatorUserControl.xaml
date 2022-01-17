@@ -75,6 +75,7 @@
         <Ellipse DataContext="{Binding Diode}" Fill="{Binding L7Fill}"  Height="30"  Width="30"  StrokeThickness="1"  Stroke="Black" Grid.Column="6" Grid.Row="0"/>
         <Ellipse DataContext="{Binding Diode}" Fill="{Binding L8Fill}"  Height="30"  Width="30"  StrokeThickness="1"  Stroke="Black" Grid.Column="7" Grid.Row="0"/>
         <Button Cursor="Hand" Height="30" Width="30"  Grid.Column="0" Grid.Row="1" Content="aK1" Background="{Binding ButtonAK.AK1Background}" >
+            <!--Zdarzenia po naciśnięciu przycisków myszy-->
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="PreviewMouseLeftButtonDown" >
                     <prism:InvokeCommandAction Command="{Binding MouseLeftButtonDownCommand}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=Content}" />

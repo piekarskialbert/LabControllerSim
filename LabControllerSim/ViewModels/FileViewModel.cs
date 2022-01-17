@@ -18,29 +18,26 @@ namespace LabControllerSim.ViewModels
     {
         public DocumentModel Document { get; private set; }
 
-        //Toolbar commands
+        // Komendy do maniplowania plikiem
         public ICommand NewCommand { get; }
         public ICommand SaveCommand { get; }
         public ICommand SaveAsCommand { get; }
         public ICommand OpenComand { get; }
 
-        //public DelegateCommand SendCodeCommand { get; private set; }
 
         public FileViewModel(DocumentModel document)
         {
   
             Document = document;
             Document.EditorDocument = new TextDocument();
-            Document.EditorDocument.Text = NewFilePattern();
+            Document.EditorDocument.Text = NewFilePattern(); // Po otworzeniu programu pokaż wzór nowego pliku
             NewCommand = new RelayCommand(NewFile);
             SaveCommand = new RelayCommand(SaveFile, () => !Document.isEmpty);
             SaveAsCommand = new RelayCommand(SaveFileAs);
             OpenComand = new RelayCommand(OpenFile);
         }
 
-
-
-
+        // Metoda tworząca nowy plik
         public void NewFile()
         {
             Document.FileName = string.Empty;
@@ -48,6 +45,7 @@ namespace LabControllerSim.ViewModels
             Document.EditorDocument.Text = NewFilePattern();
         }
 
+        // Metoda zwracająca wzór kodu nowo utworzonego pliku
         string NewFilePattern()
         {
             return @"#include <stdio.h>
@@ -69,11 +67,14 @@ int main()
 }
 ";
         }
+        
+        // Metoda zapisująca istniejący plik
         public void SaveFile()
         {
             File.WriteAllText(Document.FilePath, Document.EditorDocument.Text);
         }
 
+        // Metoda zapisująca nowy plik
         public void SaveFileAs()
         {
             var saveFileDialog = new SaveFileDialog();
@@ -84,6 +85,8 @@ int main()
                 File.WriteAllText(saveFileDialog.FileName, Document.EditorDocument.Text);
             }
         }
+
+        // Metoda otwierająca istniejący plik
         public void OpenFile()
         {
             var openFileDialog = new OpenFileDialog();
@@ -93,12 +96,15 @@ int main()
                 Document.EditorDocument.Text = File.ReadAllText(openFileDialog.FileName);
             }
         }
+
+        // Metoda przypisująca do zmiennych dokumentu ścieżke i nazwe wybranego pliku w dialogu
         private void DockFile<T>(T dialog) where T : FileDialog
         {
             Document.FilePath = dialog.FileName;
             Document.FileName = dialog.SafeFileName;
         }
 
+        // Metoda sprawdzająca czy plik po zapisaniu uległ zmianie
         public bool CheckChanges()
         {
             if (Document.EditorDocument.Text == File.ReadAllText(Document.FilePath))

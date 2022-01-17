@@ -21,6 +21,8 @@ namespace LabControllerSim.Modules.ConsoleSimulator.ViewModels
         {
             _ea = ea;
         }
+
+        //Przesłanie znaku z konsoli do wirtualnego sterownika
         private void SendChar()
         {
             if (!string.IsNullOrEmpty(_text))

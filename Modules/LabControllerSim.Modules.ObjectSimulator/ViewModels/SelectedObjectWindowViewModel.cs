@@ -41,31 +41,30 @@ namespace LabControllerSim.Modules.ObjectSimulator.ViewModels
         public SelectedObjectWindowViewModel(IEventAggregator ea)
         {
             _ea = ea;
-            ea.GetEvent<SendObjectNameEvent>().Subscribe((e) => { SelectedObject = e[1];SelectedObjectLabel = e[0]; }) ;
-           // SelectedObject = "SingleReservoir"
+            ea.GetEvent<SendObjectNameEvent>().Subscribe((e) => { SelectedObject = e[1];SelectedObjectLabel = e[0]; }) ; //Przypisanie wybranego obiektu do okna
             ConnectButton = new ControlButton() { IsEnabled = true };
             DisconnectButton = new ControlButton();
             ChooseObjectButton = new ControlButton() { IsEnabled = true }; ;
-            ConnectProgramToObjectSimulatorCommand = new RelayCommand(ConnectToProgram, () => ConnectButton.IsEnabled);
-            DisconnectProgramFromObjectSimulatorCommand = new RelayCommand(DisconnectProgram, () => DisconnectButton.IsEnabled);
+            ConnectProgramToObjectSimulatorCommand = new RelayCommand(ConnectToProgram, () => ConnectButton.IsEnabled); // Wywołanie funkcji po naciśnięciu przycisku Połącz
+            DisconnectProgramFromObjectSimulatorCommand = new RelayCommand(DisconnectProgram, () => DisconnectButton.IsEnabled); // wywołanie funkcji na naciśnięciu przycisku Rozłącz
             ResetObjectCommand = new RelayCommand(ResetjObject);
-            ea.GetEvent<SendOutputToObjectSimulatorEvent>().Subscribe(GetOutput);
-            ea.GetEvent<SendInputFromObjectToObjectSimulatorEvent>().Subscribe(GetInput);
+            ea.GetEvent<SendOutputToObjectSimulatorEvent>().Subscribe(GetOutput); // Odebranie zmiennych wyjściowych z wirtualnego sterownika
+            ea.GetEvent<SendInputFromObjectToObjectSimulatorEvent>().Subscribe(GetInput); // Odebranie zmiennych wejściowych z obiektu
         }
 
-
+        // Resetowanie zmiennych obiektu
         private void ResetjObject()
         {
             _ea.GetEvent<ResetObjectEvent>().Publish(null);
         }
 
-
+        // Wysłanie zmiennych wejściowych do wirtualnego sterownika
         private void GetInput(string intputFromObject)
         {
-            _ea.GetEvent<SendInputFromObjectToProgramEvent>().Publish(intputFromObject);
+            _ea.GetEvent<SendInputFromObjectSimulatorToProgramEvent>().Publish(intputFromObject);
         }
 
-
+        // Wsyłanie zmiennych wyjściowych do obiektu, jeżeli symulator jest połączony
         private void GetOutput(string outputFromProgram)
         {
             if (programIsConnected)
@@ -75,6 +74,7 @@ namespace LabControllerSim.Modules.ObjectSimulator.ViewModels
 
         }
 
+        // Połączenie obiektu z wirtualnym sterownikiem
         private void ConnectToProgram()
         {
             DisconnectButton.IsEnabled = true;
@@ -82,6 +82,8 @@ namespace LabControllerSim.Modules.ObjectSimulator.ViewModels
             programIsConnected = true;
             _ea.GetEvent<ConnectProgramToObjectEvent>().Publish(programIsConnected);
         }
+
+        // Rozłączenie obiektu z wirtualnym sterownikiem
         private void DisconnectProgram()
         {
             DisconnectButton.IsEnabled = false;

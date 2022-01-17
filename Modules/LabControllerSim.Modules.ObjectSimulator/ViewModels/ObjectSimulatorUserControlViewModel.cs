@@ -37,6 +37,7 @@ namespace LabControllerSim.Modules.ObjectSimulator.ViewModels
             
         }
    
+        // Wybranie obiektu z listy
         private void ChooseObject()
         {
             var objectWindow = new SelectedObjectWindow();

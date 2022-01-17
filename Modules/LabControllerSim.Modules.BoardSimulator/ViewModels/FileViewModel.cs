@@ -26,6 +26,7 @@ namespace LabControllerSim.Modules.BoardSimulator.ViewModels
             SelectProgramFileCommand = new RelayCommand(SelectFile, () => SelectButton.IsEnabled);
         }
 
+        // Wybranie pliku wykonywalnego
         private void SelectFile()
         {
             var openFileDialog = new OpenFileDialog();

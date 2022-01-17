@@ -8,6 +8,7 @@ using System.Windows.Input;
 
 namespace LabControllerSim.Core.Events
 {
+    // Zdarzenie przesyłające informacje o puszczonym klawiszu w oknie symulatora
     public class KeyUpWindowEvent : PubSubEvent<KeyEventArgs>
     {
     }

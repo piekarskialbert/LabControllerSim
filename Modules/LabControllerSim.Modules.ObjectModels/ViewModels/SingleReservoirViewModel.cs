@@ -21,19 +21,27 @@ namespace LabControllerSim.Modules.ObjectModels.ViewModels
         public DelegateCommand<object> MouseLeftButtonDownCommand { get; private set; }
         public DelegateCommand<object> MouseRightButtonDownCommand { get; private set; }
         public DelegateCommand<object> MouseLeftButtonUpCommand { get; private set; }
+        private double[] _zCapacities = { 5, 7, 10, 20,40, 50, 100 };
+        private double[] _gCapacities = { 1, 2, 3, 5, 7, 10 };
+
+        public double[] ZCapacities { get { return _zCapacities; } }
+        public double[] GCapacities { get { return _gCapacities; } }
+
         IEventAggregator _ea;
 
         public SingleReservoirViewModel(IEventAggregator ea)
         {
             SingleReservoir = new SingleReservoirModel();
-            ea.GetEvent<SendOutputFromObjectSimulatorToObjectEvent>().Subscribe(ObjectLogic);
-            ea.GetEvent<ConnectProgramToObjectEvent>().Subscribe(ConnectToProgram);
-            ea.GetEvent<ResetObjectEvent>().Subscribe(ResetObject);
+            ea.GetEvent<SendOutputFromObjectSimulatorToObjectEvent>().Subscribe(ObjectLogic); // Odebranie zmiennych wyjściowych
+            ea.GetEvent<ConnectProgramToObjectEvent>().Subscribe(ConnectToProgram); // Informacja o połączeniu ze sterownikiem
+            ea.GetEvent<ResetObjectEvent>().Subscribe(ResetObject); // Informacja o zresetowaniu zmiennych
             MouseLeftButtonDownCommand = new DelegateCommand<object>(MouseLeftButtonDown);
             MouseLeftButtonUpCommand = new DelegateCommand<object>(MouseLeftButtonUp);
             MouseRightButtonDownCommand = new DelegateCommand<object>(MouseRightButtonDown);
             _ea = ea;
         }
+
+        // Obłsuga zaworu zakłócającego
         private void MouseRightButtonDown(object obj)
         {
             if (obj.ToString() == "W") SingleReservoir.W = SingleReservoir.W == 0 ? 1 : 0;
@@ -51,12 +59,15 @@ namespace LabControllerSim.Modules.ObjectModels.ViewModels
             if (obj.ToString() == "W") SingleReservoir.W = 1;
 
         }
+
+        // Wyłączenie możliwości zmiany wejść/wyjść po połączeniu ze sterownikiem
         private void ConnectToProgram(bool programIsConnected)
         {
             if (programIsConnected) SingleReservoir.ComboBoxIsEnabled = false;
             else SingleReservoir.ComboBoxIsEnabled = true;
         }
 
+        // Przypisanie wyjść obiekty do wyjść wybranych w programie
         private void SetOutput()
         {
 
@@ -66,6 +77,8 @@ namespace LabControllerSim.Modules.ObjectModels.ViewModels
             SingleReservoir.G = OUTPUT[SingleReservoir.GIndex];
             SingleReservoir.M = OUTPUT[SingleReservoir.MIndex];
         }
+
+        // Przypisanie wejść obiekty do wyjść wybranych w programie
         private void SetInput()
         {
             INPUT[SingleReservoir.X1Index] = SingleReservoir.X1;
@@ -74,6 +87,7 @@ namespace LabControllerSim.Modules.ObjectModels.ViewModels
             INPUT[SingleReservoir.TIndex] = SingleReservoir.T;
         }
 
+        // Resetowanie zmiennych obiektu
         private void ResetObject(string obj)
         {
             SingleReservoir.X1 = 0;
@@ -89,6 +103,8 @@ namespace LabControllerSim.Modules.ObjectModels.ViewModels
             SingleReservoir.TemperatureLevel = 0;
         }
 
+        // Logika działania obiektu
+        // Ustawianie zmiennych wyjściowych, kontrola poziomu wody i temperatury w zależności od stanu zmiennych
         private void ObjectLogic(string output)
         {
             if (OUTPUT[0] != Int32.Parse(output.Substring(0, 1))) OUTPUT[0] = Int32.Parse(output.Substring(0, 1));
@@ -101,11 +117,11 @@ namespace LabControllerSim.Modules.ObjectModels.ViewModels
             if (OUTPUT[7] != Int32.Parse(output.Substring(7, 1))) OUTPUT[7] = Int32.Parse(output.Substring(7, 1));
 
             SetOutput();
-            if (SingleReservoir.Z1 == 1 && SingleReservoir.WaterLevel <= 1000) SingleReservoir.WaterLevel += 2;
-            if (SingleReservoir.Z2 == 1 && SingleReservoir.WaterLevel <= 1000) SingleReservoir.WaterLevel += 4;
-            if (SingleReservoir.Z3 == 1 && SingleReservoir.WaterLevel >= 0) SingleReservoir.WaterLevel -= 5;
-            if (SingleReservoir.W == 1) SingleReservoir.WaterLevel -= 10;
-            if (SingleReservoir.G == 1 && SingleReservoir.TemperatureLevel <= 100) SingleReservoir.TemperatureLevel += 0.5;
+            if (SingleReservoir.Z1 == 1 && SingleReservoir.WaterLevel <= 1000) SingleReservoir.WaterLevel += ZCapacities[SingleReservoir.Z1Capacity]/10;
+            if (SingleReservoir.Z2 == 1 && SingleReservoir.WaterLevel <= 1000) SingleReservoir.WaterLevel += ZCapacities[SingleReservoir.Z2Capacity]/10;
+            if (SingleReservoir.Z3 == 1 && SingleReservoir.WaterLevel >= 0) SingleReservoir.WaterLevel -= ZCapacities[SingleReservoir.Z3Capacity]/10;
+            if (SingleReservoir.W == 1) SingleReservoir.WaterLevel -= ZCapacities[SingleReservoir.WCapacity]/10;
+            if (SingleReservoir.G == 1 && SingleReservoir.TemperatureLevel <= 100) SingleReservoir.TemperatureLevel += GCapacities[SingleReservoir.GCapacity]/10;
             else if (SingleReservoir.TemperatureLevel >= 0) SingleReservoir.TemperatureLevel = SingleReservoir.TemperatureLevel - 0.05;
             if (SingleReservoir.TemperatureLevel <= 0) SingleReservoir.TemperatureLevel = 0;
             if (SingleReservoir.TemperatureLevel >= 100) SingleReservoir.TemperatureLevel = 100;
@@ -118,7 +134,7 @@ namespace LabControllerSim.Modules.ObjectModels.ViewModels
             SetInput();
 
             inputToProgram = String.Join("", INPUT.Select(x => x.ToString()));
-            _ea.GetEvent<SendInputFromObjectToObjectSimulatorEvent>().Publish(inputToProgram);
+            _ea.GetEvent<SendInputFromObjectToObjectSimulatorEvent>().Publish(inputToProgram); // Przesłanie zmiennych wejściowych
 
         }
     }

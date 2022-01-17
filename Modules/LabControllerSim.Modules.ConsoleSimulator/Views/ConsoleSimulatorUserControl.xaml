@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
         
         <Viewbox x:Name="Viewbox" MinHeight="0" Stretch="None" VerticalAlignment="Top" HorizontalAlignment="Left">
-            <TextBlock Margin="1"   Grid.Row="0" Text="{Binding Communique.Text, StringFormat=------------------ {0}}"/>
+            <TextBlock Margin="1"   Grid.Row="0" Text="{Binding Communique.Text}"/>
         </Viewbox>
         <TextBox x:Name="TextBox" BorderThickness="0" Grid.Row="1" Foreground="White" Background="Black"  CaretBrush="Transparent" 
                  Text="{Binding InputChar.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=&gt; {0} }"

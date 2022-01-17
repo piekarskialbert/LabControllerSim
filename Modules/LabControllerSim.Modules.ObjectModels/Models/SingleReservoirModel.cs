@@ -114,5 +114,21 @@ namespace LabControllerSim.Modules.ObjectModels.Models
         private bool _comboBoxIsEnabled = true;
         public bool ComboBoxIsEnabled { get { return _comboBoxIsEnabled; } set { OnPropertyChange(ref _comboBoxIsEnabled, value); } }
 
+
+        private int _z1Capacity = 4;
+        public int Z1Capacity { get { return _z1Capacity; } set { OnPropertyChange(ref _z1Capacity, value); } }
+
+        private int _z2Capacity = 3;
+        public int Z2Capacity { get { return _z2Capacity; } set { OnPropertyChange(ref _z2Capacity, value); } }
+
+        private int _z3Capacity = 5;
+        public int Z3Capacity { get { return _z3Capacity; } set { OnPropertyChange(ref _z3Capacity, value); } }
+
+        private int _wCapacity = 6;
+        public int WCapacity { get { return _wCapacity; } set { OnPropertyChange(ref _wCapacity, value); } }
+
+        private int _gCapacity = 3;
+        public int GCapacity { get { return _gCapacity; } set { OnPropertyChange(ref _gCapacity, value); } }
+
     }
 }

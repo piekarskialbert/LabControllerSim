@@ -3,20 +3,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:LabControllerSim"
-        xmlns:viewmodels="clr-namespace:LabControllerSim.ViewModels"
         mc:Ignorable="d"
         xmlns:prism="http://prismlibrary.com/" 
-        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors" 
+        xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" Height="450" Width="850">
+    <!--Wywołanie komendy KeyDownCommand po naciśnięciu dowolnego przycisku na klawiaturze-->
     <i:Interaction.Triggers>
-        <i:EventTrigger EventName="KeyUp">
-            <prism:InvokeCommandAction Command="{Binding KeyUpCommand}" />
+        <i:EventTrigger EventName="KeyDown">
+            <prism:InvokeCommandAction Command="{Binding KeyDownCommand}" />
         </i:EventTrigger>
     </i:Interaction.Triggers>
 
     <DockPanel Margin="1">
+        <!--Menu-->
         <Menu DockPanel.Dock="Top">
             <Menu.Items>
                 <MenuItem Header="Plik" DataContext="{Binding File}">
@@ -70,17 +71,20 @@
 
 
                 <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="2">
+                    <!--Region wyświetlający UserControl modułu Compilation-->
                     <ContentControl prism:RegionManager.RegionName="ErrorListRegion" Grid.Row="2"/>
                 </ScrollViewer>
-                <local:AvalonTextEditor x:Name="xmlMessage" 
+                <!--Edytor tekstowy AvalonEdit-->
+                <avalonEdit:TextEditor x:Name="xmlMessage" 
                                         FontFamily="Consolas" 
                                         SyntaxHighlighting="C++" 
                                         HorizontalScrollBarVisibility="Auto"
                                         ShowLineNumbers="True" 
                                         Document="{Binding File.Document.EditorDocument}"
                                         >
-                    <local:AvalonTextEditor.ContextMenu>
-                        <ContextMenu x:Name="mymenu1">
+                    <!--Menu po naciśnięciu prawego przycisku myszy w edytorze-->
+                    <avalonEdit:TextEditor.ContextMenu>
+                        <ContextMenu>
                             <ContextMenu.Resources>
                                 <Style TargetType="MenuItem">
                                     <Setter Property="CommandParameter" Value="{Binding Path=., RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}"/>
@@ -94,8 +98,8 @@
                             <MenuItem Command="Copy" Header="Kopiuj" />
                             <MenuItem Command="Paste" Header="Wklej"/>
                         </ContextMenu>
-                    </local:AvalonTextEditor.ContextMenu>
-                </local:AvalonTextEditor>
+                    </avalonEdit:TextEditor.ContextMenu>
+                </avalonEdit:TextEditor>
             </Grid>
         </DockPanel>
     </DockPanel>

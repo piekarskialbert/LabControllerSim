@@ -20,15 +20,16 @@ namespace LabControllerSim.ViewModels
         {
             HelpCommand = new RelayCommand(DisplayHelp);
             AboutProgramCommand = new RelayCommand(DisplayAboutProgram);
-
         }
 
+        // Metoda wyświetlająca informacje o programie
         private void DisplayAboutProgram()
         {
             var aboutAProgramDialog = new AboutProgramDialog();
             aboutAProgramDialog.ShowDialog();
         }
 
+        // Metoda wyświetlająca okno pomocy
         private void DisplayHelp()
         {
             var helpDialog = new HelpDialog();

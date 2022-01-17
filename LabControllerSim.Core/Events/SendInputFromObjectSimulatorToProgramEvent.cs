@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace LabControllerSim.Core.Events
 {
-    public class ShowBoardWindowEvent : PubSubEvent<string>
+    // Zdaerzenie przesyłające zmienne wejściowe z symulatora obiektu do programu
+    public class SendInputFromObjectSimulatorToProgramEvent : PubSubEvent<string>
     {
     }
 }

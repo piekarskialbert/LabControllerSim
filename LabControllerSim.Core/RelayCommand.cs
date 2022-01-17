@@ -8,6 +8,7 @@ using System.Windows.Input;
 namespace LabControllerSim.Core
 
 {
+    // Klasa implementująca interfejs ICommand. Umożliwia kontrolę na tym czy komenda może być wykonana
     public class RelayCommand : ICommand
     {
         readonly Action _execute;

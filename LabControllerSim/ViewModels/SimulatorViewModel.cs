@@ -1,11 +1,6 @@
 ﻿using LabControllerSim.Core;
 using LabControllerSim.Views;
 using Prism.Events;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace LabControllerSim.ViewModels
@@ -19,6 +14,7 @@ namespace LabControllerSim.ViewModels
             OpenSimulatorCommand = new RelayCommand(SimulatorOpen);
         }
 
+        // Metoda otwierająca główne okno symulatora
         private void SimulatorOpen()
         {
             var simulatorWindow = new SimulatorWindow();

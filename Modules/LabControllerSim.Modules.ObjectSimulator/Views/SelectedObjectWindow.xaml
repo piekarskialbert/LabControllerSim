@@ -14,7 +14,7 @@
             <RowDefinition Height="8*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
+                                                            <!--Wyśtwielnie widoku wybranego obiektu-->
         <ContentControl x:Name="Content" prism:RegionManager.RegionName="{Binding SelectedObject}" Grid.Row="0" Grid.ColumnSpan="2"/>
         <Button Grid.ColumnSpan="2" Grid.Row="2" Height="20" Padding="15 0 15 0" HorizontalAlignment="Right" Margin="10 10 180 10" Command="{Binding ResetObjectCommand}" Content="Resetuj"></Button>
         <Button Grid.ColumnSpan="2" Grid.Row="2" Height="20" Padding="15 0 15 0" HorizontalAlignment="Right" Margin="10 10 100 10" Command="{Binding ConnectProgramToObjectSimulatorCommand}" Content="Połącz"></Button>

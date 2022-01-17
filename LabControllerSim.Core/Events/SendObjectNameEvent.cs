@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace LabControllerSim.Core.Events
 {
+    // Zdarzenie przesyłające informacje o nazwie obiektu
     public class SendObjectNameEvent : PubSubEvent<string[]>
     {
     }

@@ -8,6 +8,7 @@ using LabControllerSim.Core.Parameters;
 
 namespace LabControllerSim.Core.Events
 {
+    // Aktywacja funkcji utworzenia pliku wykonywalnego prze moduł kompilacji
     public class CodeCompileEvent : PubSubEvent<CodeCompileEventParameters>
     {
     }

@@ -20,7 +20,7 @@ namespace LabControllerSim.ViewModels
             set { SetProperty(ref _title, value); }
 
         }
-        public DelegateCommand<KeyEventArgs> KeyUpCommand { get; private set; }
+        public DelegateCommand<KeyEventArgs> KeyDownCommand { get; private set; }
         public ICommand CloseWindowCommand { get; }
         private DocumentModel _document;
         public FileViewModel File { get; set; }
@@ -32,22 +32,23 @@ namespace LabControllerSim.ViewModels
 
         public MainWindowViewModel(IEventAggregator ea)
         {
-            KeyUpCommand = new DelegateCommand<KeyEventArgs>(KeyUp);
+            KeyDownCommand = new DelegateCommand<KeyEventArgs>(KeyDown);
             CloseWindowCommand = new RelayCommand(WindowClose);
             _document = new DocumentModel();
             Help = new HelpViewModel();
             File = new FileViewModel(_document);
             Program = new ProgramViewModel(File, ea);
             Simulator = new SimulatorViewModel(ea);
-            string path = Directory.GetCurrentDirectory();
         }
 
+        // Metoda reagująca na zamknięcie głównego okna aplikacji
         private void WindowClose()
         {
            // throw new NotImplementedException();
         }
 
-        private void KeyUp(KeyEventArgs e)
+        // Metoda wywołująca odpowiednie akcje działania na pliku po naciśnięciu odpowiedniego skrótu klawiszowego
+        private void KeyDown(KeyEventArgs e)
         {
             if (e.Key == Key.S && Keyboard.Modifiers == ModifierKeys.Control)
             {

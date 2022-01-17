@@ -7,7 +7,8 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              
              >
-
+<!--Edytować ułożenie elementów na uruchomionej aplikacji w trybie live w
+    w celu poprawnego rozmieszczenia-->
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
@@ -97,6 +98,25 @@
             </Border>
         </Canvas>
 
+        <Border Width="70" Height="20" BorderBrush="Black" BorderThickness="1"  Margin="85 30 0 0" Canvas.ZIndex="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <ComboBox SelectedIndex="{Binding SingleReservoir.Z1Capacity}" Height="20" ItemsSource="{Binding ZCapacities, Mode=OneTime}" ItemStringFormat="0 l/s"/>
+        </Border>
+
+        <Border Width="70" Height="20" BorderBrush="Black" BorderThickness="1"  Margin="340 30 0 0" Canvas.ZIndex="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <ComboBox SelectedIndex="{Binding SingleReservoir.Z2Capacity}" Height="20" ItemsSource="{Binding ZCapacities, Mode=OneTime}" ItemStringFormat="0 l/s"/>
+        </Border>
+
+        <Border Width="70" Height="20" BorderBrush="Black" BorderThickness="1"  Margin="335 370 0 0" Canvas.ZIndex="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <ComboBox SelectedIndex="{Binding SingleReservoir.Z3Capacity}" Height="20" ItemsSource="{Binding ZCapacities, Mode=OneTime}" ItemStringFormat="0 l/s"/>
+        </Border>
+
+        <Border Width="70" Height="20" BorderBrush="Black" BorderThickness="1"  Margin="240 330 0 0" Canvas.ZIndex="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <ComboBox SelectedIndex="{Binding SingleReservoir.WCapacity}" Height="20" ItemsSource="{Binding ZCapacities, Mode=OneTime}" ItemStringFormat="0 l/s"/>
+        </Border>
+
+        <Border Width="70" Height="20" BorderBrush="Black" BorderThickness="1"  Margin="178 430 0 0" Canvas.ZIndex="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <ComboBox SelectedIndex="{Binding SingleReservoir.GCapacity}" Height="20" ItemsSource="{Binding GCapacities, Mode=OneTime}" ItemStringFormat="0 °C/s"/>
+        </Border>
         <Image x:Name="Reservoir" Source="/LabControllerSim.Modules.ObjectModels;component/Images/SingleReservoir.png" />
         
 

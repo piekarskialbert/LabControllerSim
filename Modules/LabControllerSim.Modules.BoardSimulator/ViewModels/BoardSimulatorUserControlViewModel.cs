@@ -51,26 +51,26 @@ namespace LabControllerSim.Modules.BoardSimulator.ViewModels
             _ea = ea;
             Simulator = new SimulatorViewModel(ea);
             Help = new HelpViewModel();
-            MouseLeftButtonDownCommand = new DelegateCommand<object>(MouseLeftButtonDown);
-            MouseLeftButtonUpCommand = new DelegateCommand<object>(MouseLeftButtonUp);
-            MouseRightButtonDownCommand = new DelegateCommand<object>(MouseRightButtonDown);
+            MouseLeftButtonDownCommand = new DelegateCommand<object>(MouseLeftButtonDown); // Wywołanie funkcji po naciśnięciu lewego przycisku myszki
+            MouseLeftButtonUpCommand = new DelegateCommand<object>(MouseLeftButtonUp); // Wywołanie funkcji po puszczeniu lewego przycisku myszki
+            MouseRightButtonDownCommand = new DelegateCommand<object>(MouseRightButtonDown);  // Wywołanie funkcji po naciśnięciu prawego przycisku myszki
             File = new FileViewModel();
             StartButton = new ControlButton();
             StopButton = new ControlButton();
             StartButton.IsEnabled = true;
-            StartButtonCommand = new RelayCommand(StartButton_Click, () => StartButton.IsEnabled);
+            StartButtonCommand = new RelayCommand(StartButton_Click, () => StartButton.IsEnabled); 
             StopButtonCommand = new RelayCommand(StopButton_Click, () => StopButton.IsEnabled);
             Diode = new DiodeModel();
             ButtonAK = new ButtonAKModel();
-            ea.GetEvent<CloseSimulatorWindowEvent>().Subscribe(DataWindow_Closing);
-            ea.GetEvent<KeyUpWindowEvent>().Subscribe(Window_KeyUp);
-            ea.GetEvent<KeyDownWindowEvent>().Subscribe(Window_KeyDown);
-            ea.GetEvent<SendInputFromObjectToProgramEvent>().Subscribe((e) => inputToProgram = e);
-            ea.GetEvent<SendCharFromConsoleToProgramEvent>().Subscribe((e) => { inputCharBuffor += e;; });
+            ea.GetEvent<CloseSimulatorWindowEvent>().Subscribe(DataWindow_Closing); // Wywołanie funkcji po zamknięciu okna symulatora
+            ea.GetEvent<KeyUpWindowEvent>().Subscribe(Window_KeyUp); // Wywołanie funkcji po naciśnięciu przycisku na klawiaturze
+            ea.GetEvent<KeyDownWindowEvent>().Subscribe(Window_KeyDown); // Wywołanie funkcji po puszczeniu przycisku na klawiaturze
+            ea.GetEvent<SendInputFromObjectSimulatorToProgramEvent>().Subscribe((e) => inputToProgram = e); // Odebranie zmiennych wyjściowych z symulatora obiektu
+            ea.GetEvent<SendCharFromConsoleToProgramEvent>().Subscribe((e) => { inputCharBuffor += e;; }); // Odebranie znaków z konsoli
             Current = this;
         }
 
-
+        // Przełączanie wirtualnych przycisków prawym przyciskiem myszy
         private void MouseRightButtonDown(object obj)
         {
             if (obj.ToString() == "aK1") ButtonAK.AK1State = ButtonAK.AK1State == 0 ? 1 : 0;
@@ -82,7 +82,7 @@ namespace LabControllerSim.Modules.BoardSimulator.ViewModels
             if (obj.ToString() == "aK7") ButtonAK.AK7State = ButtonAK.AK7State == 0 ? 1 : 0;
             if (obj.ToString() == "aK8") ButtonAK.AK8State = ButtonAK.AK8State == 0 ? 1 : 0;
         }
-
+        // Dezaktywacja wirtualnego przycisku po puszczeniu lewego przycisku myszy
         private void MouseLeftButtonUp(object obj)
         {
             if (obj.ToString() == "aK1") ButtonAK.AK1State = 0;
@@ -95,6 +95,7 @@ namespace LabControllerSim.Modules.BoardSimulator.ViewModels
             if (obj.ToString() == "aK8") ButtonAK.AK8State = 0;
         }
 
+        // Aktywacja wirtualnego przycisku po naciśnięciu lewego przycisku myszy
         private void MouseLeftButtonDown(object obj)
         {
             if (obj.ToString() == "aK1") ButtonAK.AK1State = 1;
@@ -107,6 +108,7 @@ namespace LabControllerSim.Modules.BoardSimulator.ViewModels
             if (obj.ToString() == "aK8") ButtonAK.AK8State = 1;
         }
 
+        // Aktywacja wirtualnego przycisku po naciśnięciu odpowiedniego przycisku na klawiaturze
         private void Window_KeyDown(KeyEventArgs e)
         {
             if (e.Key == Key.Q) { ButtonAK.AK1State = 1; }
@@ -119,6 +121,7 @@ namespace LabControllerSim.Modules.BoardSimulator.ViewModels
             if (e.Key == Key.I) { ButtonAK.AK8State = 1; }
         }
 
+        // Dezaktywacja wirtualnego przycisku po puszczeniu odpowiedniego przycisku na klawiaturze
         private void Window_KeyUp(KeyEventArgs e)
         {
             if (e.Key == Key.Q) { ButtonAK.AK1State = 0; }
@@ -132,7 +135,7 @@ namespace LabControllerSim.Modules.BoardSimulator.ViewModels
 
         }
 
-
+        // Uruchomienie działania wirtualnego sterownika jako proces działający w tle
         private void StartButton_Click()
         {
             if (!string.IsNullOrEmpty(File.Path))
@@ -155,15 +158,23 @@ namespace LabControllerSim.Modules.BoardSimulator.ViewModels
             }
 
         }
-
+        
+        // Funkcja interpretująca zmienne wyjściowe z programu użytkownika
         void OutputHandler(object sendingProcess, DataReceivedEventArgs outLine)
         {
             if (!string.IsNullOrEmpty(outLine.Data))
             {
                 if (outLine.Data.Substring(0, 3) == "COM")
                 {
-                    string outputChar = outLine.Data.Substring(3,1);
-                    _ea.GetEvent<SendCharFromProgramToConsoleEvent>().Publish(outputChar);
+                    if (outLine.Data.Substring(3) == "NL")
+                    {
+                        _ea.GetEvent<SendCharFromProgramToConsoleEvent>().Publish("\n");
+                    }
+                    else
+                    {
+                        string outputChar = outLine.Data.Substring(3,1);
+                        _ea.GetEvent<SendCharFromProgramToConsoleEvent>().Publish(outputChar);
+                    }
                 }
                 else
                 {
@@ -181,7 +192,9 @@ namespace LabControllerSim.Modules.BoardSimulator.ViewModels
                 }
             }
         }
-
+        
+        // Funkcja zatrzymująca działanie procesu działającego w tle (zatrzymanie programu użytkownika) po zamknięciu okna symulatora
+        // zamykająca pozostałe okna symulatora
         private void DataWindow_Closing(object str)
         {
             if (process != null)
@@ -196,7 +209,7 @@ namespace LabControllerSim.Modules.BoardSimulator.ViewModels
         }
 
 
-
+        // Funkcja zatrzymująca działanie procesu działającego w tle (zatrzymanie programu użytkownika) po naciśnięciu przycisku stop
         private void StopButton_Click()
         {
             if (process != null)
@@ -211,6 +224,8 @@ namespace LabControllerSim.Modules.BoardSimulator.ViewModels
                 }
         }
 
+        // Funkcja wykonująca się w utworzonym procesie
+        // Otwiera plik wykonywalny utworzony przez użytkownika i wysyła do niego zmienne wejściowe
         private void Processer_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = (BackgroundWorker)sender;
@@ -261,8 +276,8 @@ namespace LabControllerSim.Modules.BoardSimulator.ViewModels
             }
 
         }
-
-
+        
+        // Funkcja zwracająca czas w millisekundach od uruchomienia aplikacji
         long Millis()
         {
             return (DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond);

@@ -8,6 +8,7 @@ using System.Windows.Input;
 
 namespace LabControllerSim.Core.Events
 {
+    // Zdarzenie przesyłające informacje o wciśniętym klawiszu w oknie symulatora
     public class KeyDownWindowEvent : PubSubEvent<KeyEventArgs>
     {
     }

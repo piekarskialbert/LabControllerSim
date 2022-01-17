@@ -10,9 +10,6 @@ using System.Windows;
 
 namespace LabControllerSim
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App
     {
         protected override Window CreateShell()
@@ -24,6 +21,7 @@ namespace LabControllerSim
         {
         }
 
+        //Dodanie modułu do aplikacji
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             moduleCatalog.AddModule<CompilationModule>();
