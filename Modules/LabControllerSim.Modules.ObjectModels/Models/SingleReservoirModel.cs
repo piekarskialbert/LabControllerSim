@@ -90,25 +90,25 @@ namespace LabControllerSim.Modules.ObjectModels.Models
         public int M { get { return _m; } set { OnPropertyChange(ref _m, value); MBackground = _m == 1 ? greenBrush : whiteBrush; } }
         public int W { get { return _w; } set { OnPropertyChange(ref _w, value); WBackground = _w == 1 ? greenBrush : whiteBrush; } }
 
-        private int _x1Index;
+        private int _x1Index = 0;
         public int X1Index { get { return _x1Index; } set { OnPropertyChange(ref _x1Index, value); } }
-        private int _x2Index;
+        private int _x2Index = 1;
         public int X2Index { get { return _x2Index; } set { OnPropertyChange(ref _x2Index, value); } }
-        private int _x3Index;
+        private int _x3Index = 2;
         public int X3Index { get { return _x3Index; } set { OnPropertyChange(ref _x3Index, value); } }
 
-        private int _tIndex;
+        private int _tIndex = 3;
         public int TIndex { get { return _tIndex; } set { OnPropertyChange(ref _tIndex, value); } }
 
-        private int _z1Index;
+        private int _z1Index = 0;
         public int Z1Index { get { return _z1Index; } set { OnPropertyChange(ref _z1Index, value); } }
-        private int _z2Index;
+        private int _z2Index = 1;
         public int Z2Index { get { return _z2Index; } set { OnPropertyChange(ref _z2Index, value); } }
-        private int _z3Index;
+        private int _z3Index = 2;
         public int Z3Index { get { return _z3Index; } set { OnPropertyChange(ref _z3Index, value); } }
-        private int _gIndex;
+        private int _gIndex = 3;
         public int GIndex { get { return _gIndex; } set { OnPropertyChange(ref _gIndex, value); } }
-        private int _mIndex;
+        private int _mIndex = 4;
         public int MIndex { get { return _mIndex; } set { OnPropertyChange(ref _mIndex, value); } }
 
         private bool _comboBoxIsEnabled = true;

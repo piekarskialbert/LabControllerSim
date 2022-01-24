@@ -146,48 +146,39 @@
                     <TextBlock Text="x3" Grid.Row="2" Padding="0 10 0 0"/>
                     <TextBlock Text="T" Grid.Row="3" Padding="0 10 0 0"/>
 
-                    <ComboBox SelectedIndex="{Binding SingleReservoir.X1Index}" Grid.Column="1" Grid.Row="0" HorizontalContentAlignment="Center" Height="20" IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}">
-                        <ComboBoxItem  IsSelected="True" Content="INPUT[0]"/>
-                        <ComboBoxItem Content="INPUT[1]" />
-                        <ComboBoxItem Content="INPUT[2]" />
-                        <ComboBoxItem Content="INPUT[3]" />
-                        <ComboBoxItem Content="INPUT[4]" />
-                        <ComboBoxItem Content="INPUT[5]" />
-                        <ComboBoxItem Content="INPUT[6]" />
-                        <ComboBoxItem Content="INPUT[7]" />
-                    </ComboBox>
+                    <ComboBox SelectedIndex="{Binding SingleReservoir.X1Index}" 
+                              Grid.Column="1" Grid.Row="0" 
+                              HorizontalContentAlignment="Center" 
+                              Height="20" 
+                              IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}"
+                              ItemsSource="{Binding InputSetLabels}"/>
 
-                    <ComboBox SelectedIndex="{Binding SingleReservoir.X2Index}" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Center" Height="20" IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}">
-                        <ComboBoxItem Content="INPUT[0]" />
-                        <ComboBoxItem  IsSelected="True" Content="INPUT[1]"/>
-                        <ComboBoxItem Content="INPUT[2]" />
-                        <ComboBoxItem Content="INPUT[3]" />
-                        <ComboBoxItem Content="INPUT[4]" />
-                        <ComboBoxItem Content="INPUT[5]" />
-                        <ComboBoxItem Content="INPUT[6]" />
-                        <ComboBoxItem Content="INPUT[7]" />
-                    </ComboBox>
-                    <ComboBox SelectedIndex="{Binding SingleReservoir.X3Index}" Grid.Column="1" Grid.Row="2" HorizontalContentAlignment="Center" Height="20" IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}">
-                        <ComboBoxItem Content="INPUT[0]" />
-                        <ComboBoxItem Content="INPUT[1]" />
-                        <ComboBoxItem IsSelected="True" Content="INPUT[2]" />
-                        <ComboBoxItem Content="INPUT[3]" />
-                        <ComboBoxItem Content="INPUT[4]" />
-                        <ComboBoxItem Content="INPUT[5]" />
-                        <ComboBoxItem Content="INPUT[6]" />
-                        <ComboBoxItem Content="INPUT[7]" />
-                    </ComboBox>
-                    <ComboBox SelectedIndex="{Binding SingleReservoir.TIndex}" Grid.Column="1" Grid.Row="3" HorizontalContentAlignment="Center" Height="20" IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}">
-                        <ComboBoxItem Content="INPUT[0]" />
-                        <ComboBoxItem Content="INPUT[1]" />
-                        <ComboBoxItem Content="INPUT[2]" />
-                        <ComboBoxItem IsSelected="True" Content="INPUT[3]" />
-                        <ComboBoxItem Content="INPUT[4]" />
-                        <ComboBoxItem Content="INPUT[5]" />
-                        <ComboBoxItem Content="INPUT[6]" />
-                        <ComboBoxItem Content="INPUT[7]" />
-                    </ComboBox>
 
+                    <ComboBox SelectedIndex="{Binding SingleReservoir.X2Index}" 
+                              Grid.Column="1" 
+                              Grid.Row="1" 
+                              HorizontalContentAlignment="Center" 
+                              Height="20" 
+                              IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}"
+                              ItemsSource="{Binding InputSetLabels}"/>
+
+                    <ComboBox SelectedIndex="{Binding SingleReservoir.X3Index}" 
+                              Grid.Column="1" 
+                              Grid.Row="2" 
+                              HorizontalContentAlignment="Center" 
+                              Height="20" 
+                              IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}"
+                              ItemsSource="{Binding InputSetLabels}"/>
+
+
+                    <ComboBox SelectedIndex="{Binding SingleReservoir.TIndex}" 
+                              Grid.Column="1" 
+                              Grid.Row="3" 
+                              HorizontalContentAlignment="Center" 
+                              Height="20" 
+                              IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}"
+                              ItemsSource="{Binding InputSetLabels}"/>
+                    
                 </Grid>
 
             </ScrollViewer>
@@ -211,60 +202,46 @@
                     <TextBlock Text="G" Grid.Row="3" Padding="0 8 0 0"/>
                     <TextBlock Text="M" Grid.Row="4" Padding="0 8 0 0"/>
 
-                    <ComboBox SelectedIndex="{Binding SingleReservoir.Z1Index}" Grid.Column="1" Grid.Row="0" HorizontalContentAlignment="Center" Height="20" IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}">
-                        <ComboBoxItem IsSelected="True" Content="OUTPUT[0]"/>
-                        <ComboBoxItem Content="OUTPUT[1]"/>
-                        <ComboBoxItem Content="OUTPUT[2]"/>
-                        <ComboBoxItem Content="OUTPUT[3]"/>
-                        <ComboBoxItem Content="OUTPUT[4]"/>
-                        <ComboBoxItem Content="OUTPUT[5]"/>
-                        <ComboBoxItem Content="OUTPUT[6]"/>
-                        <ComboBoxItem Content="OUTPUT[7]"/>
-                    </ComboBox>
+                    <ComboBox SelectedIndex="{Binding SingleReservoir.Z1Index}" 
+                              Grid.Column="1" 
+                              Grid.Row="0" 
+                              HorizontalContentAlignment="Center" 
+                              Height="20" 
+                              IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}"
+                              ItemsSource="{Binding OutputSetLabels}"/>
 
-                    <ComboBox SelectedIndex="{Binding SingleReservoir.Z2Index}" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Center" Height="20" IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}">
-                        <ComboBoxItem Content="OUTPUT[0]"/>
-                        <ComboBoxItem IsSelected="True" Content="OUTPUT[1]"/>
-                        <ComboBoxItem Content="OUTPUT[2]"/>
-                        <ComboBoxItem Content="OUTPUT[3]"/>
-                        <ComboBoxItem Content="OUTPUT[4]"/>
-                        <ComboBoxItem Content="OUTPUT[5]"/>
-                        <ComboBoxItem Content="OUTPUT[6]"/>
-                        <ComboBoxItem Content="OUTPUT[7]"/>
-                    </ComboBox>
+                    <ComboBox SelectedIndex="{Binding SingleReservoir.Z2Index}" 
+                              Grid.Column="1" 
+                              Grid.Row="1" 
+                              HorizontalContentAlignment="Center" 
+                              Height="20" 
+                              IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}"
+                              ItemsSource="{Binding OutputSetLabels}"/>
 
-                    <ComboBox SelectedIndex="{Binding SingleReservoir.Z3Index}" Grid.Column="1" Grid.Row="2" HorizontalContentAlignment="Center" Height="20" IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}">
-                        <ComboBoxItem Content="OUTPUT[0]"/>
-                        <ComboBoxItem Content="OUTPUT[1]"/>
-                        <ComboBoxItem IsSelected="True" Content="OUTPUT[2]"/>
-                        <ComboBoxItem Content="OUTPUT[3]"/>
-                        <ComboBoxItem Content="OUTPUT[4]"/>
-                        <ComboBoxItem Content="OUTPUT[5]"/>
-                        <ComboBoxItem Content="OUTPUT[6]"/>
-                        <ComboBoxItem Content="OUTPUT[7]"/>
-                    </ComboBox>
+                    <ComboBox SelectedIndex="{Binding SingleReservoir.Z3Index}" 
+                              Grid.Column="1" 
+                              Grid.Row="2" 
+                              HorizontalContentAlignment="Center" 
+                              Height="20" 
+                              IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}"
+                              ItemsSource="{Binding OutputSetLabels}"/>
 
-                    <ComboBox SelectedIndex="{Binding SingleReservoir.GIndex}" Grid.Column="1" Grid.Row="3" HorizontalContentAlignment="Center" Height="20" IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}">
-                        <ComboBoxItem Content="OUTPUT[0]"/>
-                        <ComboBoxItem Content="OUTPUT[1]"/>
-                        <ComboBoxItem Content="OUTPUT[2]"/>
-                        <ComboBoxItem IsSelected="True" Content="OUTPUT[3]"/>
-                        <ComboBoxItem Content="OUTPUT[4]"/>
-                        <ComboBoxItem Content="OUTPUT[5]"/>
-                        <ComboBoxItem Content="OUTPUT[6]"/>
-                        <ComboBoxItem Content="OUTPUT[7]"/>
-                    </ComboBox>
+                    <ComboBox SelectedIndex="{Binding SingleReservoir.GIndex}" 
+                              Grid.Column="1" 
+                              Grid.Row="3"
+                              HorizontalContentAlignment="Center" 
+                              Height="20" 
+                              IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}"
+                              ItemsSource="{Binding OutputSetLabels}"/>
 
-                    <ComboBox SelectedIndex="{Binding SingleReservoir.MIndex}" Grid.Column="1" Grid.Row="4" HorizontalContentAlignment="Center" Height="20" IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}">
-                        <ComboBoxItem Content="OUTPUT[0]"/>
-                        <ComboBoxItem Content="OUTPUT[1]"/>
-                        <ComboBoxItem Content="OUTPUT[2]"/>
-                        <ComboBoxItem Content="OUTPUT[3]"/>
-                        <ComboBoxItem IsSelected="True" Content="OUTPUT[4]"/>
-                        <ComboBoxItem Content="OUTPUT[5]"/>
-                        <ComboBoxItem Content="OUTPUT[6]"/>
-                        <ComboBoxItem Content="OUTPUT[7]"/>
-                    </ComboBox>
+                    <ComboBox SelectedIndex="{Binding SingleReservoir.MIndex}" 
+                              Grid.Column="1" 
+                              Grid.Row="4" 
+                              HorizontalContentAlignment="Center" 
+                              Height="20" 
+                              IsEnabled="{Binding SingleReservoir.ComboBoxIsEnabled}"
+                              ItemsSource="{Binding OutputSetLabels}"/>
+
                 </Grid>
             </ScrollViewer>
         </Grid>

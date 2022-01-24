@@ -34,9 +34,6 @@
                     <MenuItem Command="Copy" Header="Kopiuj" />
                     <MenuItem Command="Paste" Header="Wklej"/>
                 </MenuItem>
-                <MenuItem Header="Widok" DataContext="">
-
-                </MenuItem>
                 <MenuItem Header="Program" DataContext="{Binding Program}">
                     <MenuItem Header="Sprawdź błędy" Command="{Binding CheckErrorsCommand}"/>
                     <MenuItem InputGestureText="F5" Header="Utwórz plik wykonywalny" Command="{Binding CompileCommand}"/>

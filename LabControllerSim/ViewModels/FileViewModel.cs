@@ -46,7 +46,7 @@ namespace LabControllerSim.ViewModels
         }
 
         // Metoda zwracająca wzór kodu nowo utworzonego pliku
-        string NewFilePattern()
+        private string NewFilePattern()
         {
             return @"#include <stdio.h>
 #include <unistd.h>

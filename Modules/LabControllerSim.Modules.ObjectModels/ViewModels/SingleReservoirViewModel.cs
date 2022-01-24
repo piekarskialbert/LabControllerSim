@@ -21,9 +21,12 @@ namespace LabControllerSim.Modules.ObjectModels.ViewModels
         public DelegateCommand<object> MouseLeftButtonDownCommand { get; private set; }
         public DelegateCommand<object> MouseRightButtonDownCommand { get; private set; }
         public DelegateCommand<object> MouseLeftButtonUpCommand { get; private set; }
-        private double[] _zCapacities = { 5, 7, 10, 20,40, 50, 100 };
+        private double[] _zCapacities = { 5, 7, 10, 20, 40, 50, 100 };
         private double[] _gCapacities = { 1, 2, 3, 5, 7, 10 };
-
+        private string[] _inputSetLabels = { "INPUT[0]", "INPUT[1]", "INPUT[2]", "INPUT[3]", "INPUT[4]", "INPUT[5]", "INPUT[6]", "INPUT[7]" };
+        private string[] _outputSetLabels = { "OUTPUT[0]", "OUTPUT[1]", "OUTPUT[2]", "OUTPUT[3]", "OUTPUT[4]", "OUTPUT[5]", "OUTPUT[6]", "OUTPUT[7]" };
+        public string[] InputSetLabels { get { return _inputSetLabels; } }
+        public string[] OutputSetLabels { get { return _outputSetLabels; } }
         public double[] ZCapacities { get { return _zCapacities; } }
         public double[] GCapacities { get { return _gCapacities; } }
 

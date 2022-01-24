@@ -28,12 +28,9 @@ namespace LabControllerSim.ViewModels
         public SimulatorViewModel Simulator { get; set; }
         public ProgramViewModel Program { get; set; }
 
-        
-
         public MainWindowViewModel(IEventAggregator ea)
         {
             KeyDownCommand = new DelegateCommand<KeyEventArgs>(KeyDown);
-            CloseWindowCommand = new RelayCommand(WindowClose);
             _document = new DocumentModel();
             Help = new HelpViewModel();
             File = new FileViewModel(_document);
@@ -41,11 +38,6 @@ namespace LabControllerSim.ViewModels
             Simulator = new SimulatorViewModel(ea);
         }
 
-        // Metoda reagująca na zamknięcie głównego okna aplikacji
-        private void WindowClose()
-        {
-           // throw new NotImplementedException();
-        }
 
         // Metoda wywołująca odpowiednie akcje działania na pliku po naciśnięciu odpowiedniego skrótu klawiszowego
         private void KeyDown(KeyEventArgs e)
