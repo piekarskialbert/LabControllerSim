@@ -33,7 +33,7 @@ namespace LabControllerSim.Modules.BoardSimulator.Models
         public int L2State { get { return _l2State; } set { OnPropertyChange(ref _l2State, value); L2Fill = _l2State == 1 ? greenBrush : redBrush; } }
         public int L3State { get { return _l3State; } set { OnPropertyChange(ref _l3State, value); L3Fill = _l3State == 1 ? greenBrush : redBrush; } }
         public int L4State { get { return _l4State; } set { OnPropertyChange(ref _l4State, value); L4Fill = _l4State == 1 ? greenBrush : redBrush; } }
-        public int L5State { get { return _l5State; } set { OnPropertyChange(ref _l1State, value); L5Fill = _l5State == 1 ? greenBrush : redBrush; } }
+        public int L5State { get { return _l5State; } set { OnPropertyChange(ref _l5State, value); L5Fill = _l5State == 1 ? greenBrush : redBrush; } }
         public int L6State { get { return _l6State; } set { OnPropertyChange(ref _l2State, value); L6Fill = _l6State == 1 ? greenBrush : redBrush; } }
         public int L7State { get { return _l7State; } set { OnPropertyChange(ref _l3State, value); L7Fill = _l7State == 1 ? greenBrush : redBrush; } }
         public int L8State { get { return _l8State; } set { OnPropertyChange(ref _l4State, value); L8Fill = _l8State == 1 ? greenBrush : redBrush; } }

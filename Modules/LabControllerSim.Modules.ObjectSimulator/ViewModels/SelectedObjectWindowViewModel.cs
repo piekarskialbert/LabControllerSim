@@ -1,6 +1,7 @@
 ﻿using LabControllerSim.Core;
 using LabControllerSim.Core.Events;
 using LabControllerSim.Modules.ObjectSimulator.Models;
+using LabControllerSim.Modules.ObjectSimulator.Views;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
@@ -17,6 +18,7 @@ namespace LabControllerSim.Modules.ObjectSimulator.ViewModels
         public string ActualObject { get; set; }
         public ICommand ConnectProgramToObjectSimulatorCommand { get; }
         public ICommand DisconnectProgramFromObjectSimulatorCommand { get; }
+        public ICommand HelpCommand { get; }
         public ICommand ResetObjectCommand { get; }
         IEventAggregator _ea;
         public bool programIsConnected;
@@ -48,8 +50,16 @@ namespace LabControllerSim.Modules.ObjectSimulator.ViewModels
             ConnectProgramToObjectSimulatorCommand = new RelayCommand(ConnectToProgram, () => ConnectButton.IsEnabled); // Wywołanie funkcji po naciśnięciu przycisku Połącz
             DisconnectProgramFromObjectSimulatorCommand = new RelayCommand(DisconnectProgram, () => DisconnectButton.IsEnabled); // wywołanie funkcji na naciśnięciu przycisku Rozłącz
             ResetObjectCommand = new RelayCommand(ResetjObject);
+            HelpCommand = new RelayCommand(DisplayHelp);
             ea.GetEvent<SendOutputToObjectSimulatorEvent>().Subscribe(GetOutput); // Odebranie zmiennych wyjściowych z wirtualnego sterownika
             ea.GetEvent<SendInputFromObjectToObjectSimulatorEvent>().Subscribe(GetInput); // Odebranie zmiennych wejściowych z obiektu
+        }
+
+        // Wyświetlanie okna pomocy
+        private void DisplayHelp()
+        {
+            var helpDialog = new HelpDialog();
+            helpDialog.ShowDialog();
         }
 
         // Resetowanie zmiennych obiektu

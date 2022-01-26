@@ -66,7 +66,7 @@
             <Label Grid.Column="6" Grid.Row="0" HorizontalContentAlignment="Center">L7</Label>
             <Label Grid.Column="7" Grid.Row="0" HorizontalContentAlignment="Center">L8</Label>
 
-            <Ellipse DataContext="{Binding Diode}" Fill="{Binding L1Fill}"  Height="30"  Width="30"  StrokeThickness="1"  Stroke="Black" Grid.Column="0" Grid.Row="0"/>
+         <Ellipse DataContext="{Binding Diode}" Fill="{Binding L1Fill}"  Height="30"  Width="30"  StrokeThickness="1"  Stroke="Black" Grid.Column="0" Grid.Row="0"/>
         <Ellipse DataContext="{Binding Diode}" Fill="{Binding L2Fill}"  Height="30"  Width="30"  StrokeThickness="1"  Stroke="Black" Grid.Column="1" Grid.Row="0"/>
         <Ellipse DataContext="{Binding Diode}" Fill="{Binding L3Fill}"  Height="30"  Width="30"  StrokeThickness="1"  Stroke="Black" Grid.Column="2" Grid.Row="0"/>
         <Ellipse DataContext="{Binding Diode}" Fill="{Binding L4Fill}"  Height="30"  Width="30"  StrokeThickness="1"  Stroke="Black" Grid.Column="3" Grid.Row="0"/>

@@ -10,4 +10,10 @@
   <ItemGroup>
     <ProjectReference Include="..\..\LabControllerSim.Core\LabControllerSim.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\HelpDialog.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
 </Project>

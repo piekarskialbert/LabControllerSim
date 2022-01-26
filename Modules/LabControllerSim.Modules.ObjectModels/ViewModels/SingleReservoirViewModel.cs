@@ -110,14 +110,21 @@ namespace LabControllerSim.Modules.ObjectModels.ViewModels
         // Ustawianie zmiennych wyjściowych, kontrola poziomu wody i temperatury w zależności od stanu zmiennych
         private void ObjectLogic(string output)
         {
-            if (OUTPUT[0] != Int32.Parse(output.Substring(0, 1))) OUTPUT[0] = Int32.Parse(output.Substring(0, 1));
-            if (OUTPUT[1] != Int32.Parse(output.Substring(1, 1))) OUTPUT[1] = Int32.Parse(output.Substring(1, 1));
-            if (OUTPUT[2] != Int32.Parse(output.Substring(2, 1))) OUTPUT[2] = Int32.Parse(output.Substring(2, 1));
-            if (OUTPUT[3] != Int32.Parse(output.Substring(3, 1))) OUTPUT[3] = Int32.Parse(output.Substring(3, 1));
-            if (OUTPUT[4] != Int32.Parse(output.Substring(4, 1))) OUTPUT[4] = Int32.Parse(output.Substring(4, 1));
-            if (OUTPUT[5] != Int32.Parse(output.Substring(5, 1))) OUTPUT[5] = Int32.Parse(output.Substring(5, 1));
-            if (OUTPUT[6] != Int32.Parse(output.Substring(6, 1))) OUTPUT[6] = Int32.Parse(output.Substring(6, 1));
-            if (OUTPUT[7] != Int32.Parse(output.Substring(7, 1))) OUTPUT[7] = Int32.Parse(output.Substring(7, 1));
+            try
+            {
+                if (OUTPUT[0] != Int32.Parse(output.Substring(0, 1))) OUTPUT[0] = Int32.Parse(output.Substring(0, 1));
+                if (OUTPUT[1] != Int32.Parse(output.Substring(1, 1))) OUTPUT[1] = Int32.Parse(output.Substring(1, 1));
+                if (OUTPUT[2] != Int32.Parse(output.Substring(2, 1))) OUTPUT[2] = Int32.Parse(output.Substring(2, 1));
+                if (OUTPUT[3] != Int32.Parse(output.Substring(3, 1))) OUTPUT[3] = Int32.Parse(output.Substring(3, 1));
+                if (OUTPUT[4] != Int32.Parse(output.Substring(4, 1))) OUTPUT[4] = Int32.Parse(output.Substring(4, 1));
+                if (OUTPUT[5] != Int32.Parse(output.Substring(5, 1))) OUTPUT[5] = Int32.Parse(output.Substring(5, 1));
+                if (OUTPUT[6] != Int32.Parse(output.Substring(6, 1))) OUTPUT[6] = Int32.Parse(output.Substring(6, 1));
+                if (OUTPUT[7] != Int32.Parse(output.Substring(7, 1))) OUTPUT[7] = Int32.Parse(output.Substring(7, 1));
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Błąd w programie");
+            }
 
             SetOutput();
             if (SingleReservoir.Z1 == 1 && SingleReservoir.WaterLevel <= 1000) SingleReservoir.WaterLevel += ZCapacities[SingleReservoir.Z1Capacity]/10;
@@ -132,7 +139,7 @@ namespace LabControllerSim.Modules.ObjectModels.ViewModels
             if (SingleReservoir.WaterLevel <= 0) SingleReservoir.WaterLevel = 0;
             SingleReservoir.X1 = SingleReservoir.WaterLevel >= 235 ? 1 : 0;
             SingleReservoir.X2 = SingleReservoir.WaterLevel >= 555 ? 1 : 0;
-            SingleReservoir.X3 = SingleReservoir.WaterLevel >= 855 ? 1 : 0;
+            SingleReservoir.X3 = SingleReservoir.WaterLevel >= 900 ? 1 : 0;
             SingleReservoir.T = SingleReservoir.TemperatureLevel >= 80 ? 1 : 0;
             SetInput();
 

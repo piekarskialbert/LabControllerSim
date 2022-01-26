@@ -19,5 +19,7 @@
         <Button Grid.ColumnSpan="2" Grid.Row="2" Height="20" Padding="15 0 15 0" HorizontalAlignment="Right" Margin="10 10 180 10" Command="{Binding ResetObjectCommand}" Content="Resetuj"></Button>
         <Button Grid.ColumnSpan="2" Grid.Row="2" Height="20" Padding="15 0 15 0" HorizontalAlignment="Right" Margin="10 10 100 10" Command="{Binding ConnectProgramToObjectSimulatorCommand}" Content="Połącz"></Button>
         <Button Grid.ColumnSpan="2" Grid.Row="2" Height="20" Padding="15 0 15 0" HorizontalAlignment="Right" Margin="10 10 20 10" Command="{Binding DisconnectProgramFromObjectSimulatorCommand}" Content="Rozłącz"></Button>
+        <Button Grid.ColumnSpan="2" Grid.Row="2" Height="20" Padding="15 0 15 0" HorizontalAlignment="Right" Margin="10 10 600 10" Command="{Binding HelpCommand}" Content="Pomoc"></Button>
+
     </Grid>
 </Window>

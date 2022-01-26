@@ -4329,6 +4329,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_45407557C5944B3F882BE2579AFEC60B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_4542DAC28F5C4FE1AFE604F4480EC413"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -4984,12 +4990,6 @@
         "Entry"
         {
         "MsmKey" = "8:_4F4BE1B90C4C447786C058D9AFFA1D75"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4F4F0AA9E61843DE92DD2F7BE083BC10"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -31148,6 +31148,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_45407557C5944B3F882BE2579AFEC60B"
+            {
+            "SourcePath" = "8:..\\LabControllerSim\\bin\\publish\\LabControllerSim.exe"
+            "TargetName" = "8:LabControllerSim.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_4E950A05F7EA449AA437B166566B5148"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4542DAC28F5C4FE1AFE604F4480EC413"
             {
             "SourcePath" = "8:..\\Compiler\\share\\locale\\ru\\LC_MESSAGES\\ld.mo"
@@ -33334,26 +33354,6 @@
             "TargetName" = "8:client.py"
             "Tag" = "8:"
             "Folder" = "8:_F0BA431895AB48C9890F84D7A3E396A0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4F4F0AA9E61843DE92DD2F7BE083BC10"
-            {
-            "SourcePath" = "8:..\\LabControllerSim\\bin\\publish\\LabControllerSim.exe"
-            "TargetName" = "8:LabControllerSim.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_4E950A05F7EA449AA437B166566B5148"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -75054,7 +75054,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_4F4F0AA9E61843DE92DD2F7BE083BC10"
+            "Target" = "8:"
             "Folder" = "8:_13983FD655D04A3A9F7DB9919CB37D0D"
             "WorkingFolder" = "8:_4E950A05F7EA449AA437B166566B5148"
             "Icon" = "8:"

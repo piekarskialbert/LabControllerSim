@@ -166,7 +166,7 @@ namespace LabControllerSim.Modules.BoardSimulator.ViewModels
             {
                 if (outLine.Data.Substring(0, 3) == "COM")
                 {
-                    if (outLine.Data.Substring(3) == "NL")
+                    if (outLine.Data.Substring(3) == "NL") // znak nowej lini
                     {
                         _ea.GetEvent<SendCharFromProgramToConsoleEvent>().Publish("\n");
                     }
@@ -179,14 +179,28 @@ namespace LabControllerSim.Modules.BoardSimulator.ViewModels
                 else
                 {
                     string output = outLine.Data;
-                    if (Diode.L1State != Int32.Parse(output.Substring(0, 1))) Diode.L1State = Int32.Parse(output.Substring(0, 1));
-                    if (Diode.L2State != Int32.Parse(output.Substring(1, 1))) Diode.L2State = Int32.Parse(output.Substring(1, 1));
-                    if (Diode.L3State != Int32.Parse(output.Substring(2, 1))) Diode.L3State = Int32.Parse(output.Substring(2, 1));
-                    if (Diode.L4State != Int32.Parse(output.Substring(3, 1))) Diode.L4State = Int32.Parse(output.Substring(3, 1));
-                    if (Diode.L5State != Int32.Parse(output.Substring(4, 1))) Diode.L5State = Int32.Parse(output.Substring(4, 1));
-                    if (Diode.L6State != Int32.Parse(output.Substring(5, 1))) Diode.L6State = Int32.Parse(output.Substring(5, 1));
-                    if (Diode.L7State != Int32.Parse(output.Substring(6, 1))) Diode.L7State = Int32.Parse(output.Substring(6, 1));
-                    if (Diode.L8State != Int32.Parse(output.Substring(7, 1))) Diode.L8State = Int32.Parse(output.Substring(7, 1));
+                    try
+                    {
+                        if (Diode.L1State != Int32.Parse(output.Substring(0, 1))) Diode.L1State = Int32.Parse(output.Substring(0, 1));
+                        if (Diode.L2State != Int32.Parse(output.Substring(1, 1))) Diode.L2State = Int32.Parse(output.Substring(1, 1));
+                        if (Diode.L3State != Int32.Parse(output.Substring(2, 1))) Diode.L3State = Int32.Parse(output.Substring(2, 1));
+                        if (Diode.L4State != Int32.Parse(output.Substring(3, 1))) Diode.L4State = Int32.Parse(output.Substring(3, 1));
+                        if (Diode.L5State != Int32.Parse(output.Substring(4, 1))) Diode.L5State = Int32.Parse(output.Substring(4, 1));
+                        if (Diode.L6State != Int32.Parse(output.Substring(5, 1))) Diode.L6State = Int32.Parse(output.Substring(5, 1));
+                        if (Diode.L7State != Int32.Parse(output.Substring(6, 1))) Diode.L7State = Int32.Parse(output.Substring(6, 1));
+                        if (Diode.L8State != Int32.Parse(output.Substring(7, 1))) Diode.L8State = Int32.Parse(output.Substring(7, 1));
+                    }
+                    catch (Exception e)
+                    {
+                        StopButton.IsEnabled = false;
+                        StartButton.IsEnabled = true;
+                        File.SelectButton.IsEnabled = true;
+                        process.Kill();
+                        process.Refresh();
+                        Processer.CancelAsync();
+                        MessageBox.Show("Błąd w programie");
+
+                    }
 
                     _ea.GetEvent<SendOutputToObjectSimulatorEvent>().Publish(output.Substring(8));
                 }
