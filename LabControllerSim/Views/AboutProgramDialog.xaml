@@ -12,7 +12,7 @@
             <TextBlock FontSize="24" 
                    HorizontalAlignment="Center"
                    FontWeight="Bold">
-            Wersja programu: v1.0 <LineBreak></LineBreak>
+            Wersja aplikacji: v1.0 <LineBreak></LineBreak>
             Autor: Piekarski Albert
             </TextBlock>
         </StackPanel>

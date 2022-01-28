@@ -7,15 +7,56 @@
         mc:Ignorable="d"
         Title="Pomoc" Height="350" Width="500">
     <Grid>
-        <StackPanel VerticalAlignment="Center"
-                HorizontalAlignment="Center">
-            <TextBlock FontSize="24" 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="24" 
                    HorizontalAlignment="Center"
                    FontWeight="Bold"
-                   Height="250" Width="400"    >
-            Okno pomocy
-            
+                   Grid.Row="0">
+            Okno pomocy 
             </TextBlock>
-        </StackPanel>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <TextBlock Margin="15 0 15 0">
+                Kod należy dodawać w przeznaczonych do tego miejscach <LineBreak/>
+                oznaczonych przez komentarze <LineBreak/>
+                ============================================= <LineBreak/>
+                Nazwy zmiennych odpowiadających przyciskom <LineBreak/>
+                &#160;&#160;&#160;&#160;--------------------------------------------------------- <LineBreak/>
+                &#160;&#160;&#160;&#160;|&#160;<Bold>aK1</Bold>&#160;|
+                &#160;<Bold>aK2</Bold>&#160;|
+                &#160;<Bold>aK3</Bold>&#160;|
+                &#160;<Bold>aK4</Bold>&#160;|
+                &#160;<Bold>aK5</Bold>&#160;|
+                &#160;<Bold>aK6</Bold>&#160;|
+                &#160;<Bold>aK7</Bold>&#160;|
+                &#160;<Bold>aK8</Bold>&#160;| <LineBreak/>
+                &#160;&#160;&#160;&#160;--------------------------------------------------------- <LineBreak/><LineBreak/>
+                          Nazwy zmiennych odpowiadających diodom <LineBreak/>
+                &#160;&#160;&#160;&#160;------------------------------------------- <LineBreak/>
+                &#160;&#160;&#160;&#160;|&#160;<Bold>L1</Bold>&#160;|
+                &#160;<Bold>L2</Bold>&#160;|
+                &#160;<Bold>L3</Bold>&#160;|
+                &#160;<Bold>L4</Bold>&#160;|
+                &#160;<Bold>L5</Bold>&#160;|
+                &#160;<Bold>L6</Bold>&#160;|
+                &#160;<Bold>L7</Bold>&#160;|
+                &#160;<Bold>L8</Bold>&#160;| <LineBreak/>
+                &#160;&#160;&#160;&#160;-------------------------------------------<LineBreak/><LineBreak/>
+                                 Tablica zmiennych przesyłana do obiektu <LineBreak/>
+                &#160;&#160;&#160;&#160;------------------------------- <LineBreak/>
+                &#160;&#160;&#160;&#160;|&#160;<Bold>OUTPUT[0]...OUTPUT[7]</Bold>&#160;|
+            <LineBreak/>
+                &#160;&#160;&#160;&#160;-------------------------------<LineBreak/><LineBreak/>
+                                             Tablica zmiennych odbierana z obiektu <LineBreak/>
+                &#160;&#160;&#160;&#160;--------------------------- <LineBreak/>
+                &#160;&#160;&#160;&#160;|&#160;<Bold>INPUT[0]...INPUT[7]</Bold>&#160;|
+            <LineBreak/>
+                &#160;&#160;&#160;&#160;---------------------------<LineBreak/>
+            ============================================= <LineBreak/>
+            
+        </TextBlock>
+        </ScrollViewer>
     </Grid>
 </Window>

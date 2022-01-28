@@ -7,16 +7,48 @@
         mc:Ignorable="d"
         Title="Pomoc" Height="350" Width="500">
     <Grid>
-        <StackPanel VerticalAlignment="Center"
-                HorizontalAlignment="Center">
-            <TextBlock FontSize="24" 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="24" 
                    HorizontalAlignment="Center"
                    FontWeight="Bold"
-                   Height="250" Width="400"    >
-             Okno pomocy<LineBreak/>
-             Symulator
+                   Grid.Row="0">
+            Okno pomocy - Symulator
+        </TextBlock>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <TextBlock Margin="15 0 15 0">
+                Aby wybrać program należy naciśnąć przycisk <Bold>Wybierz program..</Bold><LineBreak/>
+                następnie wybrać utworzony wcześniej plik .exe<LineBreak/>
+                ===================================================== <LineBreak/>
+                Obsługa wirtualnych przycisków <Bold>aK1...aK8</Bold> przy pomocy klawiatury:<LineBreak/>
+                                &#160;&#160;&#160;&#160;--------------------------------------------------------- <LineBreak/>
+                &#160;&#160;&#160;&#160;|&#160;<Bold>aK1</Bold>&#160;|
+                &#160;<Bold>aK2</Bold>&#160;|
+                &#160;<Bold>aK3</Bold>&#160;|
+                &#160;<Bold>aK4</Bold>&#160;|
+                &#160;<Bold>aK5</Bold>&#160;|
+                &#160;<Bold>aK6</Bold>&#160;|
+                &#160;<Bold>aK7</Bold>&#160;|
+                &#160;<Bold>aK8</Bold>&#160;| <LineBreak/>
+                &#160;&#160;&#160;&#160;--------------------------------------------------------- <LineBreak/>
+                &#160;&#160;&#160;&#160;|&#160;<Bold>&#160;&#160;q&#160;&#160;</Bold>&#160;|
+                &#160;<Bold>&#160;&#160;w&#160;&#160;</Bold>&#160;|
+                &#160;<Bold>&#160;&#160;e&#160;&#160;</Bold>&#160;|
+                &#160;<Bold>&#160;&#160;r&#160;&#160;&#160;</Bold>&#160;|
+                &#160;<Bold>&#160;&#160;t&#160;&#160;&#160;</Bold>&#160;|
+                &#160;<Bold>&#160;&#160;y&#160;&#160;</Bold>&#160;|
+                &#160;<Bold>&#160;&#160;u&#160;&#160;&#160;</Bold>&#160;|
+                &#160;<Bold>&#160;&#160;i&#160;&#160;&#160;</Bold>&#160;| <LineBreak/>
+                &#160;&#160;&#160;&#160;--------------------------------------------------------- <LineBreak/><LineBreak/>
+                Obsługa wirtualnych przycisków za pomocą myszy: <LineBreak/>
+                &#160;&#160;Naciśnięcie lewego przycisku myszy aktywuje przycisk<LineBreak/>
+                &#160;&#160;Puszczenie lewego przycisku myszy dezaktywuje przycisk<LineBreak/>
+                &#160;&#160;Naciśnięcie prawego przycisku myszy przełącza stan przycisku na przeciwny<LineBreak/>
+                ==================================================== <LineBreak/>
 
             </TextBlock>
-        </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

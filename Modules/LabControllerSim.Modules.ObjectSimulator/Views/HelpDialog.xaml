@@ -6,15 +6,27 @@
         mc:Ignorable="d"
         Title="Pomoc" Height="350" Width="500">
     <Grid>
-        <StackPanel VerticalAlignment="Center"
-                HorizontalAlignment="Center">
-            <TextBlock FontSize="24" 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="24" 
                    HorizontalAlignment="Center"
                    FontWeight="Bold"
-                   Height="250" Width="400"    >
-            Okno pomocy
-            
+                   Grid.Row="0">
+            Okno pomocy - Symulator obiektów
+        </TextBlock>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <TextBlock Margin="15 0 15 0">
+                Aby wybrać program należy naciśnąć przycisk <Bold>Wybierz program..</Bold><LineBreak/>
+                następnie wybrać utworzony wcześniej plik .exe<LineBreak/>
+                ===================================================== <LineBreak/>
+                Aby symulator działał poprawnie należy przypisać: <LineBreak/>
+                    Tablice wejściową <Bold>INPUT</Bold> oraz <Bold>OUTPUT</Bold> do odpowiednich zmiennych<LineBreak/>
+                    lokalnych obiektu, zgodnie z przypisaniami w wcześniej tworzonym programie<LineBreak/>
+                ==================================================== <LineBreak/>
+
             </TextBlock>
-        </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>
