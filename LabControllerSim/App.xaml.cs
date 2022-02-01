@@ -6,6 +6,10 @@ using LabControllerSim.Modules.ObjectSimulator;
 using LabControllerSim.Views;
 using Prism.Ioc;
 using Prism.Modularity;
+using System;
+using System.Diagnostics;
+using System.Reflection;
+using System.Security.Principal;
 using System.Windows;
 
 namespace LabControllerSim
@@ -30,5 +34,6 @@ namespace LabControllerSim
             moduleCatalog.AddModule<ObjectModelsModule>();
             moduleCatalog.AddModule<ObjectSimulatorModule>();
         }
+
     }
 }
